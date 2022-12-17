@@ -470,7 +470,14 @@ strong p {
   /* border: 1.5px solid rgb(242, 238, 238); */
   /* background-color: rgb(249, 249, 249); */
 }
-
+.card:hover{
+  transform: scale(1.1);
+  transition: 0.7s;
+}
+.card-2:hover{
+  transform: scale(1.1);
+  transition: 0.7s;
+}
 .card-content {
   position: relative;
   top: 30px;
@@ -921,6 +928,8 @@ strong p {
 .social-icon i:hover {
   background-color: #3b5998;
   color: white;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 body>footer>div.social-icon>div.yt>i:hover {
