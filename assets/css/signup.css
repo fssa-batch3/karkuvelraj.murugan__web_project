@@ -86,8 +86,6 @@
   outline: none;
   padding: 14px;
   font-size: 12px;
-  position: relative;
-  top: 150px;
   border-top: white;
   border-left: white;
   border-right: white;
@@ -104,8 +102,7 @@
   outline: none;
   padding: 14px;
   font-size: 12px;
-  position: relative;
-  top: 165px;
+  
   border-top: white;
   border-left: white;
   border-right: white;
@@ -122,8 +119,7 @@
   outline: none;
   padding: 14px;
   font-size: 12px;
-  position: relative;
-  top: 180px;
+  
   border-top: white;
   border-left: white;
   border-right: white;
