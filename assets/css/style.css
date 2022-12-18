@@ -403,6 +403,7 @@ strong p {
   width: 100%;
   margin-top: 50px;
   background-image: url(../images/symbol-scatter-haikei\ \(1\).png);
+  /* linear-gradient(rgb(7,34,7,0.5),rgb(7,34,7,0.4)), */
   background-repeat: no-repeat;
   background-size: cover;
 }
