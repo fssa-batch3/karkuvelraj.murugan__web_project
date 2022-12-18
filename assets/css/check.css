@@ -81,6 +81,9 @@ ul li {
     /* background-color: white; */
 
 }
+s{
+    text-decoration: line-through;
+}
 body{
     font-family: 'Noto Sans', sans-serif;
     background-repeat: no-repeat;
