@@ -15,6 +15,11 @@
 .heading{
     font-size: 50px;
     text-align: center;
+    margin-left: 50px;
+    background: -webkit-linear-gradient(45deg, #09009F, #00FF95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 .title{
     display: flex;

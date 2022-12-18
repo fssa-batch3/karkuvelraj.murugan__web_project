@@ -85,3 +85,7 @@ textarea{
     align-items: center;
     width: 340px;
 }
+.right-col-container{
+    position: relative;
+    right: 50px;
+}

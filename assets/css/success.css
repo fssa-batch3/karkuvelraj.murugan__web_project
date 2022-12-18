@@ -71,3 +71,10 @@ ul li {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  h2{
+      color: black;
+      -webkit-text-fill-color: goldenrod; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    
+  }
