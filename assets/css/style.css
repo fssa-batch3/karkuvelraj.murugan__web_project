@@ -189,7 +189,10 @@ ul li {
 .discount {
   color: rgb(179, 154, 17);
 }
-
+.pant-review{
+  position: relative;
+  top: 12px;
+}
 .order {
   width: 220px;
   height: 50px;
