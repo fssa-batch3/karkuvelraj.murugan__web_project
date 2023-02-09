@@ -96,7 +96,7 @@
             <p><input type="color"  value="#800080" name="" id=""><span class="color"  for="">PURPLE</label></p>
             <p><input type="color"  value="#add8e6" name="" id=""><span class="color" for="">LITE BLUE</label></p>
         </div>
-        <section class="product-container">
+        <!-- <section class="product-container">
             <div class="card-container">
                 <div class="card">
                     <img class="image" src="../../assets/images/S21183CORETWBK_BLACK-1.jpg" width="260px " height="350px" alt=""
@@ -681,10 +681,84 @@
             
 
 
-        </section>
+        </section> -->
         
 
     </section>
+
+    <script>
+        for (let j = 0; j <6; j++) {
+  div_card = document.createElement("div");
+div_card.setAttribute("class", "card-container");
+document.querySelector(".pack").prepend(div_card)
+
+
+
+
+
+div_card1= document.createElement("div");
+div_card1.setAttribute("class", "card");
+document.querySelector(".card").append(div_card1)
+
+
+h2 = document.createElement("h2")
+h2.setAttribute("class" , "ak")
+h2.innerHTML= product_list[j].name 
+document.querySelector(".card-content").append(h2)
+
+img = document.createElement("img")
+img.setAttribute("src" ,product_list[j].img);
+img.setAttribute("alt" , "shirt")
+img.setAttribute("width" , "150px")
+document.querySelector(".card-content").append(img)
+
+
+p = document.createElement("p")
+p.setAttribute("class" , "shirt-type")
+p.innerHTML= product_list[j].type 
+document.querySelector(".card-content").append(p)
+
+
+p = document.createElement("p")
+p.setAttribute("class" , "shirt-rate")
+p.innerHTML= product_list[j].price
+document.querySelector(".card-content").append(p)
+
+
+div_card2 = document.createElement("div")
+div_card2.setAttribute("class" , "shoe-review")
+document.querySelector(".card-content").append(div_card2)
+
+
+i = document.createElement("i")
+i.setAttribute("class" , "fa fa-star-o")
+document.querySelector(".shoe-review").append(i)
+
+
+i = document.createElement("i")
+i.setAttribute("class" , "fa fa-star-o")
+document.querySelector(".shoe-review").append(i)
+
+
+i = document.createElement("i")
+i.setAttribute("class" , "fa fa-star-o")
+document.querySelector(".shoe-review").append(i)
+
+
+i = document.createElement("i")
+i.setAttribute("class" , "fa fa-star-o")
+document.querySelector(".shoe-review").append(i)
+
+a = document.createElement("a")
+a.setAttribute("href" , "./pages/products/product.html")
+a.setAttribute("class" , "link")
+document.querySelector(".card-content").append(a)
+
+btn = document.createElement("button")
+btn.setAttribute("class" , "buy")
+btn.innerHTML="Buy Now"
+document.querySelector(".link").append(btn)
+    </script>
 
 </body>
 

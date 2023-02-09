@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up page</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="./signup.js"></script>
 </head>
 <body>
  
@@ -62,18 +63,69 @@
            <div class="signup-form" >
                 <h2>Registration</h2>
             <div class="inputs">
-              <input  type="text" placeholder="Username">
-              <input type="mail" name="" id="" placeholder="Mail Id/Phone Number">
-              <input type="password" placeholder="Password">
+              <input  type="mail" id="email" placeholder="email">
+              <input type="password" id="password" placeholder="Create password">
+              <input type="password"  id="pass" placeholder="Confirm_Password">
             </div>
             <div class="otp">
 
-                  <div class="have-account"> <p > LOGIN</p></div> 
+                  <div class="have-account"> <p ><button onclick="register()">LOGIN</button> </p></div> 
                         <p class="or-1">or</p>
                      <div class="request-otp"><p > Request OTP</p></div> 
                 </div>
            </div>
 
      </section>
+<script>
+
+function register(){
+    user_data = JSON.parse(localStorage.getItem("users")) || [];
+  const name = document.getElementById("email").value
+  const last = document.getElementById("password").value
+  const email = document.getElementById("pass").value
+  users.push({email,password,pass});
+  localStorage.setItem("users",JSON.stringify(users));
+  alert("registered successfully ");
+  window.location.href = "../../pages/other pages/login.html"
+  }
+
+
+
+      //  function getdata(){
+      //   const email = document.getElementById("email").value
+      //   const create_password = document.getElementById("passowrd").value
+      //   const confirm_password = document.getElementById("pass").value
+       
+        // console.log(email);
+        // console.log(create_password);
+        // console.log(confirm_pass);
+
+
+   
+
+
+        // let user =[{
+        //  user_email : email,
+        //  user_password: create_password,
+        //  user_password:confirm_password
+        // }]
+
+        // const json = JSON.stringify(user);
+        // localStorage.setItem(user_email,email)
+        // localStorage.setItem(create_password,password)
+        // localStorage.setItem(confirm_password,pass)
+
+
+
+        // if(create_password==confirm_password){
+        //   window.location.href="../homepage/login.html"
+        // }else{
+        //   alert("incorrect password")
+        // }
+        //   }
+</script>
+
+
+
 </body>
 </html>

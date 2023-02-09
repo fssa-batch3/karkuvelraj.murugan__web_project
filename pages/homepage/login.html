@@ -55,18 +55,43 @@
 
      <section class="login-content">
         <div class="login-page">
-             <h1 class="site-name">AAHA</h1>
-             <input class="mail" type="mail" placeholder="Email address">
-             <input class="password" type="password" placeholder="Password">
-             <button class="login">LOG IN</button>
+             <h1  class="site-name">AAHA</h1>
+             <input id="email" class="mail" type="email"  placeholder="Email address">
+             <input id="password" class="password"  type="password" placeholder="Password">
+             <button onclick="login()" type="button" class="login">LOG IN</button>
              <div class="border-4"></div><div class="border-5"></div>
              <p class="or">OR</p>
              <img class="g-logo" src="../../assets/images/google-logo.webp" alt="googlelogo" width="30px"> <a href=""><p class="google">Continue With Google</p></a> 
              <a href=""><h5>Forget Your Password?</h5></a>
              <div class="border-6"></div>
-             <p class="sign-up">Dont't Have An Account? <a href="../homepage/sign-up.html">Sign Up</a></p>
+             <p class="sign-up">Dont't Have An Account? </p>
 
         </div>
      </section>
+
+<script>
+      function login() {
+            let user_detail = {
+             email : document.getElementById("email").value,
+             password : document.getElementById("password").value
+};
+            let stored_data = JSON.parse(localStorage.getItem("users"));
+            let found = false;
+            for (let i=0; i< stored_data.length; i++){
+                if (user_detail.email == stored_data[i].email && user_detail.password == stored_data[i].psw){
+                    alert ("You are logged in..");
+                    window.location.href= "/index.html"
+                    found = true;
+                    break;
+                }
+            }
+                if(!found){
+                    alert("Incorrect value");
+                }
+              }
+       
+       
+    </script>
+       
 </body>
 </html>

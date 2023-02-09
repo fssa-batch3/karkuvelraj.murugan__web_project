@@ -951,4 +951,108 @@ body>footer>div.social-icon>div.insta>i:hover {
 
 .ending {
   color: red;
-} */
+} 
+
+/* ---------------------RESPONSIVE-------------------- */
+
+@media only screen and (max-width: 500px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .card-container-2 {
+    flex-direction: column;
+  }
+  .card{
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .card-2{
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .navbar .nav-items .logo{
+    width: 90px;
+    margin-bottom: 20px;
+  }
+  .nav-items{
+    position: relative;
+    right: 36px;
+  }
+  .navbar .nav-items input[type=text] {
+    width: 170px;
+    position: relative;
+    left:90px ;
+    bottom: 90px;
+  }
+  .search{
+    position: relative;
+    bottom: 90px;
+    left: 55px;
+  }
+  .hero{
+    display: unset;
+    flex-direction: row;
+  }
+  .hero img{
+    width: 360px;
+  }
+
+  .hero .left-col-hero h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .hero .left-col-hero p {
+    text-align: center;
+  }
+  .btn{
+    margin-left: 80px;
+  }
+  .right-col-hero{
+     width: 260px;
+     margin-left: 20px;
+     margin-top: 30px;
+  }
+
+  .border-1 , .border-2 , .border-3{
+     display: none;
+  }
+  .offers h2{
+     font-size: 16px;
+  }
+  .offers{
+    background-color: black;
+    background-image: url(../images/black.jpg);
+  }
+  i {
+    font-size: 16px;
+
+  }
+  .nav-container{
+    display: none;
+    
+  }
+  .hero{
+    box-shadow: none;
+  }
+  .footer-content {
+  
+    background-image: url(../images/black.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ .social-media , .kids-1{
+    display: none;
+  }
+  .kids{
+    margin-left: 30px;
+  }
+  .icon .c1{
+    display: none;
+  }
+  .fa-regular, .far {
+    font-size: 30px;
+    position: relative;
+    bottom: 12px;
+  }
+}
