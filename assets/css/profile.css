@@ -1,0 +1,223 @@
+*{
+    margin: 0px;
+    font-family: 'Kreon', serif;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: goldenrod;
+    height: 100px;
+}
+header div ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 550px;
+}
+header div ul li{
+    padding-top: 40px;
+    padding-left: 30px;
+}
+header div ul li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+h1{
+    font-size: 50px;
+    font-weight: normal;
+    padding-left: 60px;
+    position: relative;
+    top: 20px;
+    color: white;
+}
+.logo{
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 50px;
+    position: relative;
+    bottom: 10px;
+}
+.login{
+    font-size: 20px;
+    color: white;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin-top: 150px;
+    margin-left: 450px;
+    margin-bottom: 200px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height: 550px;
+    width: 600px;
+    box-shadow: 2px 4px 8px 2px rgba(6, 6, 6, 0.2), 3px 6px 20px 3px rgba(0, 0, 0, 0.19);
+}
+section h1{
+    color: black;
+    font-weight: bold;
+    font-size: 55px;
+    margin-left: 50px;
+}
+section img{
+    position: relative;
+    left: 110px;
+    top: 30px;
+}
+input[type="text"]{
+    height: 30px;
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    position: relative;
+    top: 8px;
+    left: 20px;
+    outline: none;
+}
+.btn-2 a{
+    text-decoration: none;
+    color: white;
+}
+.name{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 60px;
+}
+.age{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 128px;
+}
+.gender{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 55px;
+}
+.add{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 120px;
+}
+.des{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 180px;
+}
+.no{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 150px;
+}
+.mail{
+    font-weight: 200;
+    font-size: 20px;
+    position: relative;
+    top: 165px;
+}
+input[type="email"]{
+    height: 30px;
+    width: 225px;
+    font-size: 15px;
+    position: relative;
+    left: 98px;
+    outline: none;
+}
+input[type="date"]{
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    padding-left: 25px;
+    position: relative;
+    left: 70px;
+    outline: none;
+}
+input[type="name"]{
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    padding-left: 25px;
+    position: relative;
+    left: 125px;
+    outline: none;
+}
+input[type="number"]{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
+    font-size: 15px;
+    position: relative;
+    left: 47px;
+    outline: none;
+}
+input[id="age"]{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
+    font-size: 15px;
+    position: relative;
+    left: 140px;
+    outline: none;
+}
+textarea{
+    height: 30px;
+    width: 200px;
+    padding-left: 25px;
+    font-size: 15px;
+    position: relative;
+    left: 20px;
+    top: 15px;
+    outline: none;
+}
+.c1{
+    margin-left: 165px;
+}
+.male{
+    display: inline-block;
+    position: relative;
+    left: 115px;
+}
+.btn-1{
+    font-size: 18px;
+    position: relative;
+    left: 280px;
+    top: 220px;
+    align-content: space-between;
+    border-radius: 5px;
+    border: 1px solid goldenrod;
+    color: white;
+    background-color: goldenrod;
+    height: 35px;
+    width: 100px;
+}
+.btn-1 a{
+    text-decoration: none;
+    color: white;
+}
+.btn-2{
+    font-size: 18px;
+    position: relative;
+    left: 320px;
+    top: 220px;
+    align-content: space-between;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: gray;
+    height: 35px;
+    width: 100px;
+}
+.buyer{
+    display: inline-block;
+    position: relative;
+    left: 35px;
+}

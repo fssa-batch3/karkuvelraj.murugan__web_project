@@ -453,20 +453,27 @@ strong p {
   top: 30px;
   background-color: goldenrod;
 }
-
+.pack{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card{
+  margin: 50px;
+}
 /* -------------------card section----------------------------- */
-.card-container {
+/* .card-container {
   display: flex;
   justify-content: space-evenly;
-}
-.card-container-2 {
+} */
+/* .card-container-2 {
   display: flex;
   justify-content: space-evenly;
 }
 .card-container-3 {
   display: flex;
   justify-content: space-evenly;
-}
+} */
 .card {
   width: 320px;
   height: 400px;

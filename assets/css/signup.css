@@ -28,7 +28,12 @@
   right: 60px;
 
 }
-
+.form-control  input:valid{
+  border: 2px solid green;
+}
+.form-control  input:focus{
+  border: 2.5px solid red;
+}
 .signup-para {
   position: relative;
   top: 130px;
@@ -75,21 +80,8 @@
   color: white;
 }
 
-.signup-form input[type=text] {
-  display: block;
-  position: relative;
-  top: 110px;
-  height: 35px;
-  width: 280px;
-  right: 75px;
-  border: 1px solid rgb(121, 120, 120);
-  outline: none;
-  padding: 14px;
-  font-size: 12px;
-  border-top: white;
-  border-left: white;
-  border-right: white;
-}
+
+
 
 .signup-form input[type=mail] {
   display: block;
