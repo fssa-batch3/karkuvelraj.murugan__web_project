@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-  <title>Document</title>
+  <title>Update and Delete page <index class="html"></index></title>
 </head>
 
 <body class="body">
@@ -414,7 +414,11 @@
     btn = document.createElement("button")
     btn.setAttribute("class", "buy")
     btn.innerHTML = "Buy Now"
-    a.append(btn)
+    a.append(btn);
+
+    div_edit = document.createElement("button");
+    div_edit.setAttribute("class", "edit_button");
+    div_edit.setAttribute("data-id", product_details [i]  )
 
     document.querySelector("div.pack").append(div_card);
 
@@ -422,6 +426,35 @@
 
   }
 
+
+
+  function edit_prod(e) {
+  e.preventDefault();
+  let category = document.getElementById("category").innerHTML;
+  let user_id = document.getElementById("user_id").innerHTML;
+  let prod_name = document.getElementById("prod_name").value;
+  let description = document.getElementById("description").value;
+  let prod_price = document.getElementById("prod_price").value;
+  let used_period = document.getElementById("used_period").value;
+  let duration = document.getElementById("duration").value;
+  let stored_data = JSON.parse(localStorage.getItem("product_data"));
+  let unique = document.getElementById("unique_id").innerHTML;
+  console.log(unique)
+  let prod_data = stored_data.find(product => product.unique === unique);
+  console.log(prod_data)
+  if (prod_data) {
+    prod_data.category = category;
+    prod_data.user_id = user_id;
+    prod_data.name = prod_name;
+    prod_data.description = description;
+    prod_data.price = prod_price;
+    prod_data.date = used_period;
+    prod_data.duration = duration;
+  }
+  localStorage.setItem("product_data", JSON.stringify(stored_data));
+  window.location.reload();
+}
 </script>
-<!-- <script src="./pages/cart page/form page/product.js"></script> -->
+<script src="./pages/cart page/form page/product.js"></script>
+
 </html>

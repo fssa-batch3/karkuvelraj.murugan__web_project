@@ -94,7 +94,7 @@ function signIn(e){
         document.querySelector('form').reset();
     }
     else{
-        // localStorage.setItem("userId",JSON.stringify(user_email));
+        localStorage.setItem("userId",JSON.stringify(user_email));
         
         alert("Your login in successful");
         location.href = "../profile.html"

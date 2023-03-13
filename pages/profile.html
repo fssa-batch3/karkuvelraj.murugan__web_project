@@ -89,76 +89,76 @@
             // show your data on your profile
 
 
-        // let userId = JSON.parse(localStorage.getItem('userId'));
+         let userId = JSON.parse(localStorage.getItem('userId'));
         let user_list = JSON.parse(localStorage.getItem('user_list'));
 
-        // function login_data(e) {
-        //     return e.user_email == userId;
-        // }
+        function login_data(e) {
+            return e.user_email == userId;
+        }
 
-        // user_data = user_list.find(login_data);
+        user_data = user_list.find(login_data);
 
-        // document.getElementById("user_email").value = user_data["user_email"];
-        // document.getElementById("user_number").value = user_data["user_number"];
-        // document.getElementById("user_name").value = user_data["user_name"];
+        document.getElementById("user_email").value = user_data["user_email"];
+        document.getElementById("user_number").value = user_data["user_number"];
+        document.getElementById("user_name").value = user_data["user_name"];
 
-        // document.getElementById("edit_button").addEventListener("click",enableInput);
+        document.getElementById("edit_button").addEventListener("click",enableInput);
 
-        // function enableInput(e){
-        //     if(confirm("Are you sure you want to edit the page")){
-        //         document.getElementById("user_name").removeAttribute("readonly");
-        //         document.getElementById("address").removeAttribute("readonly");
-        //         document.getElementById("user_number").removeAttribute("readonly");
-        //     }
-        // }
-
-
-        // ///////// edit page///////////
-
-        // function eprofile_details(e){
-        //         user_data["user_name"] = document.getElementById("user_name").value;
-        //         user_data["user_number"] = document.getElementById("user_number").value
-        //         user_data["user_email"] = document.getElementById("user_email").value
-
-        //         localStorage.setItem("user_list", JSON.stringify(user_list));
-        //         location.href = "#"
-        // }
-
-        // document.getElementById("save").addEventListener("click",disableInput);
-
-        // function disableInput(e){
-        //             if(confirm("Are you sure you want to save the page")){
-        //                 document.getElementById("user_name").setAttribute("readonly",true);
-        //                 document.getElementById("address").setAttribute("readonly",true);
-        //                 document.getElementById("user_number").setAttribute("readonly",true);
-        //             }
-        //         }
+        function enableInput(e){
+            if(confirm("Are you sure you want to edit the page")){
+                document.getElementById("user_name").removeAttribute("readonly");
+                document.getElementById("address").removeAttribute("readonly");
+                document.getElementById("user_number").removeAttribute("readonly");
+            }
+        }
 
 
-        // // delete function
+        ///////// edit page///////////
 
-        // document.getElementById("delete").addEventListener("click",deleteaccount);
+        function eprofile_details(e){
+                user_data["user_name"] = document.getElementById("user_name").value;
+                user_data["user_number"] = document.getElementById("user_number").value
+                user_data["user_email"] = document.getElementById("user_email").value
 
-        // function deleteaccount(e) {
-        //     if (confirm("Are You Sure on deleting?")) {
-        //         e.preventDefault()
-        //         let userId = JSON.parse(localStorage.getItem("userId"));
-        //         let user_list = JSON.parse(localStorage.getItem("user_list"));
+                localStorage.setItem("user_list", JSON.stringify(user_list));
+                location.href = "#"
+        }
 
-        //         function login_data(e) {
-        //             return e.user_email == userId;
-        //         }
+        document.getElementById("save").addEventListener("click",disableInput);
 
-        //         user_data = user_list.find(login_data);
+        function disableInput(e){
+                    if(confirm("Are you sure you want to save the page")){
+                        document.getElementById("user_name").setAttribute("readonly",true);
+                        document.getElementById("address").setAttribute("readonly",true);
+                        document.getElementById("user_number").setAttribute("readonly",true);
+                    }
+                }
 
-        //         const indexOFUser = user_list.indexOf(user_data);
 
-        //         user_list.splice(indexOFUser, 1);
+        // delete function
+
+        document.getElementById("delete").addEventListener("click",deleteaccount);
+
+        function deleteaccount(e) {
+            if (confirm("Are You Sure on deleting?")) {
+                e.preventDefault()
+                let userId = JSON.parse(localStorage.getItem("userId"));
+                let user_list = JSON.parse(localStorage.getItem("user_list"));
+
+                function login_data(e) {
+                    return e.user_email == userId;
+                }
+
+                user_data = user_list.find(login_data);
+
+                const indexOFUser = user_list.indexOf(user_data);
+
+                user_list.splice(indexOFUser, 1);
                 
-        //         localStorage.setItem("user_list", JSON.stringify(user_list));
-        //         // location.href = "../login/Signup.html";
-        //     }
-        // }
+                localStorage.setItem("user_list", JSON.stringify(user_list));
+                // location.href = "../login/Signup.html";
+            }
+        }
 
 
 
