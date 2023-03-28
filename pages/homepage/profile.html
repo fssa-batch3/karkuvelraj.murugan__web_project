@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Profile page </title>
-    <link rel="stylesheet" href="../assets/css/profile.css" />
+    <link rel="stylesheet" href="../../assets/css/profile.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +25,7 @@
         <h1> AAHA </h1>
         <div class="nav">
             <ul>
-                <li> <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+                <li> <a href="./editproduct.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
                 <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li>
                 <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
@@ -85,112 +85,7 @@
             </div>
         </form>
     </section>
-    <script>
-            // show your data on your profile
-
-
-         let userId = JSON.parse(localStorage.getItem('userId'));
-        let user_list = JSON.parse(localStorage.getItem('user_list'));
-
-        function login_data(e) {
-            return e.user_email == userId;
-        }
-
-        user_data = user_list.find(login_data);
-
-        document.getElementById("user_email").value = user_data["user_email"];
-        document.getElementById("user_number").value = user_data["user_number"];
-        document.getElementById("user_name").value = user_data["user_name"];
-
-        document.getElementById("edit_button").addEventListener("click",enableInput);
-
-        function enableInput(e){
-            if(confirm("Are you sure you want to edit the page")){
-                document.getElementById("user_name").removeAttribute("readonly");
-                document.getElementById("address").removeAttribute("readonly");
-                document.getElementById("user_number").removeAttribute("readonly");
-            }
-        }
-
-
-        ///////// edit page///////////
-
-        function eprofile_details(e){
-                user_data["user_name"] = document.getElementById("user_name").value;
-                user_data["user_number"] = document.getElementById("user_number").value
-                user_data["user_email"] = document.getElementById("user_email").value
-
-                localStorage.setItem("user_list", JSON.stringify(user_list));
-                location.href = "#"
-        }
-
-        document.getElementById("save").addEventListener("click",disableInput);
-
-        function disableInput(e){
-                    if(confirm("Are you sure you want to save the page")){
-                        document.getElementById("user_name").setAttribute("readonly",true);
-                        document.getElementById("address").setAttribute("readonly",true);
-                        document.getElementById("user_number").setAttribute("readonly",true);
-                    }
-                }
-
-
-        // delete function
-
-        document.getElementById("delete").addEventListener("click",deleteaccount);
-
-        function deleteaccount(e) {
-            if (confirm("Are You Sure on deleting?")) {
-                e.preventDefault()
-                let userId = JSON.parse(localStorage.getItem("userId"));
-                let user_list = JSON.parse(localStorage.getItem("user_list"));
-
-                function login_data(e) {
-                    return e.user_email == userId;
-                }
-
-                user_data = user_list.find(login_data);
-
-                const indexOFUser = user_list.indexOf(user_data);
-
-                user_list.splice(indexOFUser, 1);
-                
-                localStorage.setItem("user_list", JSON.stringify(user_list));
-                // location.href = "../login/Signup.html";
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // let uniqueEmail = JSON.parse(localStorage.getItem("unique"));
-        // let stored_data = JSON.parse(localStorage.getItem("user_data")) || [];
-        // const get_object = (email, stored_data) => stored_data.find(val => val.email === email);
-        // let data = get_object(uniqueEmail, stored_data);
-        // document.getElementById("user_name").innerText = data.name;
-        // document.getElementById("user_email").innerText = data.email;
-        // document.getElementById("user_phone").innerText = data.phone;
-    </script>
-
+        <script src="./usercrud.js"></script>   
 </body>
 
 </html>

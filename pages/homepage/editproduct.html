@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-items">
+          <img class="logo" src="./assets/images/logo1.png" width="130px" alt="logo">
+          <input class="searchbox" type="text" placeholder="Search items" name="search" width="500px">
+          <span class="search">
+            <i class="fa fa-search" style="font-size:24px"></i>
+    
+          </span>
+    
+    
+        </div>
+    
+        <div class="icon">
+          <a class="c1" href="./pages/homepage/cart.html"><i class="fa fa-shopping-cart"></i></a>
+          <div class="border-1"></div>
+          <a class="c1" href="./pages/homepage/wish.html"><i class='far fa-heart'></i></a>
+          <div class="border-1"></div>
+    
+          <a class="c2" href="./pages/homepage/sign-up.html"> <i class='far fa-user-circle'></i></a>
+    
+        </div>
+    
+    
+      </header>
+      <div class="nav-container">
+        <div class="nav-links">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+    
+            <div class="dropdown">
+              <li><a href="./pages/product categories/men.html">Men</a> </li>
+    
+              <div class="dropdown-content">
+                <a href="#">SHIRT</a>
+                <a href="#">T-SHIRT</a>
+                <a href="#">PANT</a>
+    
+              </div>
+            </div>
+            <div class="dropdown">
+              <li><a href="./pages/product categories/women.html">Women</a> </li>
+    
+              <div class="dropdown-content">
+                <a href="#">Suti</a>
+                <a href="#">Tops</a>
+                <a href="#">Saree's</a>
+                <a href="#">Night Dress</a>
+    
+              </div>
+            </div>
+            <div class="dropdown">
+              <li><a href="./pages/product categories/kids.html">Kids</a> </li>
+    
+              <div class="dropdown-content">
+                <a href="#">Dress</a>
+                <a href="#">Toys</a>
+                <a href="#">Modern dresses</a>
+              </div>
+            </div>
+    
+            <li><a href="./pages/homepage/about.html">About Us</a> </li>
+            <li> <a href="./pages/homepage/contact.html">Contact</a></li>
+          </ul>
+    
+        </div>
+    
+      </div>
+      <div class="pack">
+
+      </div>
+    
+
+<footer>
+
+
+
+</footer>
+<script>
+    // function upload(e){
+    //   // alert("hi")
+    //   e.preventDefault();
+    // // e.prevent
+      
+    //   let name=document.getElementById("product_name").value
+    //   let image=document.getElementById("product_image").value
+    //   let about=document.getElementById("product_about").value
+    //   let price=document.getElementById("product_price").value
+    // let unique_id = crypto.randomUUID()
+      
+    //   let product_details = JSON.parse(localStorage.getItem("product_details"))||[];
+    
+    //   product_details.push({name,image,about,price,unique_id})
+    
+    //   localStorage.setItem("product_details",JSON.stringify(product_details))
+    //   window.location.href="../../index.html"
+    
+    //   document.querySelector("form").reset()
+    
+    // }
+    
+    
+    
+    
+    
+    let product_details = JSON.parse(localStorage.getItem("product_details"));
+    console.log(product_details);
+    
+        
+    
+    for (let i = 0; i<product_details.length ; i++) {
+    
+    
+      div_card = document.createElement("section");
+      div_card.setAttribute("class", "card-container");
+      document.querySelector(".pack").append(div_card)
+    
+    
+      div_card0 = document.createElement("div");
+      div_card0.setAttribute("class", "card");
+      div_card.append(div_card0);
+    
+    
+      div_card1 = document.createElement("div");
+      div_card1.setAttribute("class", "card-content");
+      div_card0.append(div_card1);
+    
+    
+      h2 = document.createElement("h2")
+      h2.setAttribute("id", "ak")
+      h2.innerHTML = product_details[i]["name"];
+      div_card1.append(h2);
+    
+      img = document.createElement("img")
+      img.setAttribute("src", product_details[i]["image"]);
+      img.setAttribute("alt", "shirt")
+      img.setAttribute("width", "150px")
+      img.setAttribute("height", "150px")
+      div_card1.append(img);
+    
+    
+      p1 = document.createElement("p")
+      p1.setAttribute("class", "shirt-type")
+      p1.innerHTML = product_details[i]["about"]
+      div_card1.append(p1);
+    
+    
+      p2 = document.createElement("p")
+      p2.setAttribute("class", "shirt-rate")
+      p2.innerHTML = product_details[i]["price"]
+      div_card1.append(p2);
+    
+    
+      div_card2 = document.createElement("div")
+      div_card2.setAttribute("class", "shoe-review")
+      div_card1.append(div_card2);
+    
+     
+      span = document.createElement("span");
+      span.setAttribute("class", "fa fa-star-o");
+      div_card2.append(span);
+
+      btn = document.createElement("button")
+      btn.setAttribute("class", "buy")
+      btn.setAttribute("data-id",product_details[i]["unique_id"])
+      btn.innerHTML = "Edit"
+      div_card1.append(btn)
+    
+      document.querySelector("div.pack").append(div_card);
+    
+      }
+    
+      // a = document.createElement("a");
+      // a.setAttribute("href", "./editform.html");
+      // a.setAttribute("class", "link");
+      // div_card1.append(a);    
+    
+    
+    
+
+        const edit = document.querySelectorAll('button.buy');
+        edit.forEach(function (findId) {
+            findId.addEventListener('click', function () {
+                const id = this.dataset.id;
+                localStorage.setItem("product_unique_Id", JSON.stringify(id));
+                window.location.href = "./editform.html";
+            });
+        });
+
+
+    
+    
+    </script>
+
+</body>
+
+</html>

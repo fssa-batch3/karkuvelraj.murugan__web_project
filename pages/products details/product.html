@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="nav-container">
+    <div class="nav-links">
+      <ul>
+        <li><a href="../../index.html">Home</a></li>
+
+        <div class="dropdown">
+          <li><a href="../products/men.html">Men</a> </li>
+
+          <div class="dropdown-content">
+            <a href="#">SHIRT</a>
+            <a href="#">T-SHIRT</a>
+            <a href="#">PANT</a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <li><a href="../products/women.html">Women</a> </li>
+
+          <div class="dropdown-content">
+            <a href="#">Suti</a>
+            <a href="#">Tops</a>
+            <a href="#">Saree's</a>
+            <a href="#">Night Dress</a>
+
+          </div>
+        </div>
+        <div class="dropdown">
+          <li><a href="../products/kid.html">Kids</a> </li>
+
+          <div class="dropdown-content">
+            <a href="#">Dress</a>
+            <a href="#">Toys</a>
+            <a href="#">Modern dresses</a>
+          </div>
+        </div>
+
+        <li><a href="../homepage/about.html">About Us</a> </li>
+        <li> <a href="../homepage/contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+  <section class="product-details">
+
+    <div class="product">
+      <div class="gold">
+        
+      </div>
+      <div class="gape"></div>
+      <div class="gape"></div>
+      <div class="gape"></div>
+
+    </div>
+    <div class="details">
+      <h1 id="category" style="font-size:40px"></h1>
+      <h3 id="prod-type"></h3>
+      <div class="rating"> <i class="fa fa-star" style="color:goldenrod"></i></div>
+      <span class="shoe-type"></span>
+      <h5></h5>
+      <div class="size-container">
+        <span class="size">
+          <p id="size-s"></p>
+        </span> <span class="size">
+          <p id="size-M"></p>
+        </span> <span class="size">
+          <p id="size-L"></p>
+        </span> <span class="size">
+          <p id="size-XL"></p>
+        </span>
+      </div>
+      <p id="current" class="doller"></p> <span id="original" class="del"></span> <span id="offer" class="discount"></span>
+      <div class="rating-star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <strong>
+        <p id="about_item"></p>
+      </strong>
+
+      <p id="des_details"></p>
+      
+
+      <span class="shopping">
+        <a href=""><i class="fa fa-shopping-cart" style="color:goldenrod"></i></a>
+
+      </span>
+
+      <button id="add_to_cart" class="cart"></button>
+      <i class="arrow">&#10148;
+      </i>
+      <a href="./checout.html"> <button id="add_to_buy" class="order"></button></a>
+    </div>
+
+  </section>
+  <script>
+    // const product_list = [
+    //   {
+    //     name: "shoe",
+    //     type: "Running Shoes For Men Black, Yellow",
+    //     img: "./assets/images/shoe1.webp",
+    //     price: 500
+    //   },
+    //   {
+    //     name: "shirt",
+    //     type: "Fit Solid Mandarin Collar Casual Shirt",
+    //     img: "./assets/images/productshirt.webp",
+    //     price: 599
+    //   },
+    //   {
+    //     name: "pant",
+    //     type: "Fit Men Gold Lycra Blend Trousers",
+    //     img: "./assets/images/product-pant.jpg",
+    //     price: 699
+    //   },
+    //   {
+    //     name: "top",
+    //     type: "Casual Solid Women Yellow Top",
+    //     img: "./assets/images/product-top.webp",
+    //     price: 300
+    //   },
+    //   {
+    //     name: "saree",
+    //     type: "Embroidered Bollywood Saree (Yellow)",
+    //     img: "./assets/images/product-saree.jpg",
+    //     price: 1200
+    //   },
+    //   {
+    //     name: "sudi",
+    //     type: "Floral Print Kurta, Sharara & Dupatta ",
+    //     img: "./assets/images/suti.webp",
+    //     price: 900
+    //   }
+    // ]
+
+    // let product_details = JSON.parse(localStorage.getItem("product_details"));
+
+
+//console.log(div_product_details);
+      // div_product_details = document.createElement("div");
+      // div_product_details.setAttribute("class", "product");
+      // document.querySelector("section.product-details").append( div_product_details);
+
+
+      // div_gold= document.createElement("div");
+      // div_gold.setAttribute("class", "gold");
+      // div_gold.append(div_product_details);
+      
+      // img1= document.createElement("img");
+      // img1.setAttribute("src", "../../assets/images/product shoe.webp");
+      // img1.setAttribute("alt", "shoe");
+      // img1.setAttribute("width", "410");
+      // img1.setAttribute("height", "400");
+      // img1.append(div_gold);
+
+      // // div_gape= document.createElement("div");
+      // // div_gape.setAttribute("class", "gape");
+      // // div_gape.append(div_product_details);
+
+      // img2= document.createElement("img");
+      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
+      // img2.setAttribute("alt", "shoe");
+      // img2.setAttribute("width", "100px");
+      // img2.setAttribute("height", "60px");
+      // img2.append(div_gape);
+
+      // // div_gape= document.createElement("div");
+      // // div_gape.setAttribute("class", "gape");
+      // // div_gape.append(div_product_details);
+
+      // img2= document.createElement("img");
+      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
+      // img2.setAttribute("alt", "shoe");
+      // img2.setAttribute("width", "100px");
+      // img2.setAttribute("height", "60px");
+      // img2.append(div_gape);
+
+      // // div_gape= document.createElement("div");
+      // // div_gape.setAttribute("class", "gape");
+      // // div_gape.append(div_product_details);
+
+      // img2= document.createElement("img");
+      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
+      // img2.setAttribute("alt", "shoe");
+      // img2.setAttribute("width", "100px");
+      // img2.setAttribute("height", "60px");
+      // img2.append(div_gape);
+
+      
+      // div_product_details2 = document.createElement("div");
+      // div_product_details2.setAttribute("class", "details");
+      // document.querySelector("section.product-details").append( div_product_details2);
+
+
+
+      img1= document.createElement("img");
+      img1.setAttribute("src", "../../assets/images/product shoe.webp");
+      img1.setAttribute("alt", "shoe");
+      img1.setAttribute("width", "410");
+      img1.setAttribute("height", "400");
+      document.querySelector("div.gold").append(img1)
+  
+      //  div_gape= document.createElement("div");
+      //  div_gape.setAttribute("class", "gape");
+      //  div_gape.append();
+
+      img2= document.createElement("img");
+      img2.setAttribute("src", "../../assets/images/shoe1.webp");
+      img2.setAttribute("alt", "shoe");
+      img2.setAttribute("width", "100px");
+      img2.setAttribute("height", "80px");
+
+      img3= document.createElement("img");
+      img3.setAttribute("src", "../../assets/images/shoe2.webp");
+      img3.setAttribute("alt", "shoe");
+      img3.setAttribute("width", "100px");
+      img3.setAttribute("height", "60px");
+  
+      img4= document.createElement("img");
+      img4.setAttribute("src", "../../assets/images/shoe3.webp");
+      img4.setAttribute("alt", "shoe");
+      img4.setAttribute("width", "100px");
+      img4.setAttribute("height", "60px");
+      document.querySelector("div.gape").append(img2,img3,img4)
+
+      category = document.querySelector("h1#category");
+      category.innerText = "Shoes";
+
+      category = document.querySelector("h3#prod-type");
+      category.innerText = "Men Regular Casual Shoe";
+
+      category = document.querySelector("div.rating");
+      category.innerText = "3.5";
+
+      category = document.querySelector("span.shoe-type");
+      category.innerText = "31,480 ratings and 697 reviews";
+
+
+      category = document.querySelector("h5");
+      category.innerText = "Choose Size:";
+
+      category = document.querySelector("p#size-s");
+      category.innerText = "s";
+
+      category = document.querySelector("p#size-M");
+      category.innerText = "M";
+
+      category = document.querySelector("p#size-L");
+      category.innerText = "L";
+
+      category = document.querySelector("p#size-XL");
+      category.innerText = "XL";
+
+      category = document.querySelector("p#current");
+      category.innerText = "389";
+
+
+      category = document.querySelector("span#original");
+      category.innerText = "599";
+
+      category = document.querySelector("span#offer");
+      category.innerText = "18% discoutn";
+
+      category = document.querySelector("p#about_item");
+      category.innerText = "Describtion";
+
+      category = document.querySelector("p#des_details");
+      category.innerText = `This shirt is easy to take 
+         care of. Choose a gentle machine wash and 
+         always dry the shirt in the shade. This 
+         can help the colour last longer. Wash it
+          with like colours to avoid colour bleeding.
+           You can use a steam iron to give the shirt 
+           a bright and neat look. Get compliments and 
+           look classy by just 
+        pairing it up with sleek trousers `;
+
+      category = document.querySelector("button#add_to_cart");
+      category.innerText = "Add To Cart";
+
+      category = document.querySelector("button#add_to_buy");
+      category.innerText = "Buy now";
+      
+ 
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

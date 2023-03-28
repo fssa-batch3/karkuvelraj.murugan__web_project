@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-commerce Signup Page</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		form {
+			background-color: white;
+			padding: 70px;
+			margin: 200px auto;
+			max-width: 500px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+
+		input[type="text"],
+		input[type="number"],
+		input[type="url"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		}
+
+		.submit {
+			/* display: block; */
+			/* width: 100%; */
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<form role ="form" id="upload" >
+		<h1>create your product</h1>
+		<label for="name">Edit Product Name:</label>
+		<input type="text" id="product_name" name="name" required>
+		<label for="url">Edit Product Image:</label>
+		<input type="url" id="product_image" name="name">
+		<label for="name">Edit About Product:</label>
+		<input type="text" id="product_about" name="name" required>
+		<label for="number">Edit ProductPrice:</label>
+		<input type="number" id="product_price" name="number" required>
+		<!-- <button class="submit" type="button" onclick="edit(event)">Edit</button> -->
+		<button class="submit" id = "save" type="button">Save</button>
+		<button class="submit" id = "delete" type="button">Delete</button>
+
+
+
+	</form>
+
+	<!-- <script src="./product.js"></script> -->
+
+    <script>
+        let product_detail = JSON.parse(localStorage.getItem("product_details"));
+
+        let product_unique_Id = JSON.parse(localStorage.getItem("product_unique_Id"));
+        
+        function find_data(e){
+            return e.unique_id == product_unique_Id;
+        }
+		
+        product_data = product_detail.find(find_data);
+
+        document.getElementById("product_name").value = product_data["name"];
+		document.getElementById("product_image").value = product_data["image"];
+		document.getElementById("product_about").value = product_data["about"];
+		document.getElementById("product_price").value = product_data["price"];
+
+		function update(){
+			product_data["name"] = document.getElementById("product_name").value;
+
+			localStorage.setItem("product_details",JSON.stringify(product_detail));
+		}
+
+		document.getElementById("save").addEventListener("click",update)
+
+		function Delete(){
+
+			if(confirm("are you sure want to delete")){
+				let product_detail = JSON.parse(localStorage.getItem("product_details"));
+
+        	let product_unique_Id = JSON.parse(localStorage.getItem("product_unique_Id"));
+        
+        	function find_data(e){
+            	return e.unique_id == product_unique_Id;
+        	}
+
+			product_data = product_detail.find(find_data);
+			const remove = product_detail.indexOf(product_data);
+
+			product_detail.splice(remove,1);
+			localStorage.setItem("product_details",JSON.stringify(product_detail));
+			window.location.href = "./editproduct.html";
+			}
+			
+		}
+
+		document.getElementById("delete").addEventListener("click",Delete)
+
+    </script>
+</body>
+
+</html>
