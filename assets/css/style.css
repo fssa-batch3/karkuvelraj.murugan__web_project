@@ -386,6 +386,24 @@ strong p {
   font-weight: bold;
 }
 
+.my-button {
+  background-color: black; /* Set background color */
+  border-radius: 5px;
+  border: none; /* Remove border */
+  color: white; /* Set text color */
+  padding: 8px 27px; /* Set padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove text decoration */
+  display: inline-block; /* Make it an inline-block element */
+  font-size: 16px; /* Set font size */
+  cursor: pointer; /* Change cursor to pointer */
+  transition-duration: 0.4s; /* Add transition */
+}
+
+.my-button:hover {
+  background-color: goldenrod; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+}
 /* ------------button----------- */
 .btn {
   width: 250px;

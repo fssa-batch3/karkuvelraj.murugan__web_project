@@ -11,6 +11,7 @@ function signUp(e) {
 
 
     function checkPassword() {
+      e.preventDefault()
       if (password !== confirm_password) {
         alert("Re-enter the Password");
         confirm_password.value = reset();
@@ -42,7 +43,7 @@ function signUp(e) {
        document.getElementById('user_number');
        document.getElementById('user_name');
       alert('Account created Successfully');
-      location.href = "../homepage/login.html";
+      location.href = "../homepage/profile.html";
 
     }
     else {

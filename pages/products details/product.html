@@ -109,103 +109,7 @@
 
   </section>
   <script>
-    // const product_list = [
-    //   {
-    //     name: "shoe",
-    //     type: "Running Shoes For Men Black, Yellow",
-    //     img: "./assets/images/shoe1.webp",
-    //     price: 500
-    //   },
-    //   {
-    //     name: "shirt",
-    //     type: "Fit Solid Mandarin Collar Casual Shirt",
-    //     img: "./assets/images/productshirt.webp",
-    //     price: 599
-    //   },
-    //   {
-    //     name: "pant",
-    //     type: "Fit Men Gold Lycra Blend Trousers",
-    //     img: "./assets/images/product-pant.jpg",
-    //     price: 699
-    //   },
-    //   {
-    //     name: "top",
-    //     type: "Casual Solid Women Yellow Top",
-    //     img: "./assets/images/product-top.webp",
-    //     price: 300
-    //   },
-    //   {
-    //     name: "saree",
-    //     type: "Embroidered Bollywood Saree (Yellow)",
-    //     img: "./assets/images/product-saree.jpg",
-    //     price: 1200
-    //   },
-    //   {
-    //     name: "sudi",
-    //     type: "Floral Print Kurta, Sharara & Dupatta ",
-    //     img: "./assets/images/suti.webp",
-    //     price: 900
-    //   }
-    // ]
-
-    // let product_details = JSON.parse(localStorage.getItem("product_details"));
-
-
-//console.log(div_product_details);
-      // div_product_details = document.createElement("div");
-      // div_product_details.setAttribute("class", "product");
-      // document.querySelector("section.product-details").append( div_product_details);
-
-
-      // div_gold= document.createElement("div");
-      // div_gold.setAttribute("class", "gold");
-      // div_gold.append(div_product_details);
-      
-      // img1= document.createElement("img");
-      // img1.setAttribute("src", "../../assets/images/product shoe.webp");
-      // img1.setAttribute("alt", "shoe");
-      // img1.setAttribute("width", "410");
-      // img1.setAttribute("height", "400");
-      // img1.append(div_gold);
-
-      // // div_gape= document.createElement("div");
-      // // div_gape.setAttribute("class", "gape");
-      // // div_gape.append(div_product_details);
-
-      // img2= document.createElement("img");
-      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
-      // img2.setAttribute("alt", "shoe");
-      // img2.setAttribute("width", "100px");
-      // img2.setAttribute("height", "60px");
-      // img2.append(div_gape);
-
-      // // div_gape= document.createElement("div");
-      // // div_gape.setAttribute("class", "gape");
-      // // div_gape.append(div_product_details);
-
-      // img2= document.createElement("img");
-      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
-      // img2.setAttribute("alt", "shoe");
-      // img2.setAttribute("width", "100px");
-      // img2.setAttribute("height", "60px");
-      // img2.append(div_gape);
-
-      // // div_gape= document.createElement("div");
-      // // div_gape.setAttribute("class", "gape");
-      // // div_gape.append(div_product_details);
-
-      // img2= document.createElement("img");
-      // img2.setAttribute("src", "../../assets/images/product shoe.webp");
-      // img2.setAttribute("alt", "shoe");
-      // img2.setAttribute("width", "100px");
-      // img2.setAttribute("height", "60px");
-      // img2.append(div_gape);
-
-      
-      // div_product_details2 = document.createElement("div");
-      // div_product_details2.setAttribute("class", "details");
-      // document.querySelector("section.product-details").append( div_product_details2);
-
+    
 
 
       img1= document.createElement("img");
@@ -215,28 +119,30 @@
       img1.setAttribute("height", "400");
       document.querySelector("div.gold").append(img1)
   
-      //  div_gape= document.createElement("div");
-      //  div_gape.setAttribute("class", "gape");
-      //  div_gape.append();
+ 
 
       img2= document.createElement("img");
       img2.setAttribute("src", "../../assets/images/shoe1.webp");
       img2.setAttribute("alt", "shoe");
       img2.setAttribute("width", "100px");
       img2.setAttribute("height", "80px");
+      document.querySelector("div.gape").append(img2)
+
 
       img3= document.createElement("img");
       img3.setAttribute("src", "../../assets/images/shoe2.webp");
       img3.setAttribute("alt", "shoe");
       img3.setAttribute("width", "100px");
       img3.setAttribute("height", "60px");
+      document.querySelector("div.gape").append(img3)
+
   
       img4= document.createElement("img");
       img4.setAttribute("src", "../../assets/images/shoe3.webp");
       img4.setAttribute("alt", "shoe");
       img4.setAttribute("width", "100px");
       img4.setAttribute("height", "60px");
-      document.querySelector("div.gape").append(img2,img3,img4)
+      document.querySelector("div.gape").append(img4)
 
       category = document.querySelector("h1#category");
       category.innerText = "Shoes";

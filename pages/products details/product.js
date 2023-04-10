@@ -1,21 +1,4 @@
-// function upload(e){
-//     e.preventdefault();
-    
-//     let name=document.getElementById("product_name").value
-//     let image=document.getElementById("product_image").value
-//     let about=document.getElementById("product_about").value
-//     let price=document.getElementById("product_price").value
-    
-//     let product_details = JSON.parse(localStorage.getItem("product_details")) || [];
 
-//     product_details.push({name,image,about,price})
-
-//     localStorage.setItem("product_details",JSON.stringify(product_details))
-//     window.location.href="../../index.html"
-
-//     document.querySelector("form").reset()
-
-    
         
     
 
@@ -67,84 +50,7 @@ let unique_id = crypto.randomUUID()
 
 
 
-// function edit_prod(e) {
-//   e.preventDefault();
-//   let category = document.getElementById("category").innerHTML;
-//   let user_id = document.getElementById("user_id").innerHTML;
-//   let prod_name = document.getElementById("prod_name").value;
-//   let description = document.getElementById("description").value;
-//   let prod_price = document.getElementById("prod_price").value;
-//   let used_period = document.getElementById("used_period").value;
-//   let duration = document.getElementById("duration").value;
-//   let stored_data = JSON.parse(localStorage.getItem("product_data"));
-//   let unique = document.getElementById("unique_id").innerHTML;
-//   console.log(unique)
-//   let prod_data = stored_data.find(product => product.unique === unique);
-//   console.log(prod_data)
-//   if (prod_data) {
-//     prod_data.category = category;
-//     prod_data.user_id = user_id;
-//     prod_data.name = prod_name;
-//     prod_data.description = description;
-//     prod_data.price = prod_price;
-//     prod_data.date = used_period;
-//     prod_data.duration = duration;
-//   }
-//   localStorage.setItem("product_data", JSON.stringify(stored_data));
-//   window.location.reload();
-// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // const product_list = [
-  //   {
-  //     name: "shoe",
-  //     type: "Running Shoes For Men Black, Yellow",
-  //     img: "./assets/images/shoe1.webp",
-  //     price: 500
-  //   },
-  //   {
-  //     name: "shirt",
-  //     type: "Fit Solid Mandarin Collar Casual Shirt",
-  //     img: "./assets/images/productshirt.webp",
-  //     price: 599
-  //   },
-  //   {
-  //     name: "pant",
-  //     type: "Fit Men Gold Lycra Blend Trousers",
-  //     img: "./assets/images/product-pant.jpg",
-  //     price: 699
-  //   },
-  //   {
-  //     name: "top",
-  //     type: "Casual Solid Women Yellow Top",
-  //     img: "./assets/images/product-top.webp",
-  //     price: 300
-  //   },
-  //   {
-  //     name: "saree",
-  //     type: "Embroidered Bollywood Saree (Yellow)",
-  //     img: "./assets/images/product-saree.jpg",
-  //     price: 1200
-  //   },
-  //   {
-  //     name: "sudi",
-  //     type: "Floral Print Kurta, Sharara & Dupatta ",
-  //     img: "./assets/images/suti.webp",
-  //     price: 900
-  //   }
-  // ]
 
   let product_details = JSON.parse(localStorage.getItem("product_details"));
 
