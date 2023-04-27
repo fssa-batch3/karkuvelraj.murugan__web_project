@@ -6,19 +6,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>E-commerce Signup Page</title>
+	<link rel="stylesheet" href="../../assets/css/men.css">
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
 		}
-
 		form {
 			background-color: white;
 			padding: 70px;
-			margin: 200px auto;
-			max-width: 500px;
+			/* margin: 200px auto; */
+			max-width: 800px;
 			border-radius: 5px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+
 		}
 
 		input[type="text"],
@@ -53,29 +57,89 @@
 			text-align: center;
 			margin-bottom: 30px;
 		}
+
+		table,
+		th,
+		td {
+			border: 1px solid;
+			height: 20px;
+			width: 700px;
+		}
+
+		.table-container {
+			position: relative;
+			top: 60px;
+			left: 100px;
+		}
 	</style>
 </head>
 
 <body>
-	<form role ="form" id="upload" >
-		<h1>create your product</h1>
-		<label for="name">Product Name:</label>
-		<input type="text" id="product_name" name="name" required>
-		<label for="url">Product Image:</label>
-		<input type="url" id="product_image" name="name">
-		<label for="name">About Product:</label>
-		<input type="text" id="product_about" name="name" required>
-		<label for="number">ProductPrice:</label>
-		<input type="number" id="product_price" name="number" required>
-		<button class="submit" type="button" onclick="upload(event)">Upload</button>
-		<!-- <button class="submit" type="button" onclick="edit(event)">Edit</button> -->
-		<button class="submit" type="button">Delete</button>
+	<section class="admin-container">
+		<form class="product-form" role="form" id="upload" onsubmit="upload()">
+			<div>
+				<h1>create your product</h1>
+				<label for="name">Product Name:</label>
+				<input type="text" id="product_name" name="name" required>
+				<label for="name">Category:</label>
+				<input type="text" id="Category" name="name" required>
+				<label for="url">Image1:</label>
+				<input type="url" id="main-image" name="name" required>
+				<label for="name">Image2</label>
+				<input type="url" id="sub-img1" name="name" required>
+				<label for="name">Image3:</label>
+				<input type="url" id="sub-img2" name="name" required>
+			</div>
+			<div>
+				<label for="name">Image4:</label>
+				<input type="url" id="sub-img3" name="name" required>
+				<label for="name">Size:</label>
+				<input type="text" id="product_size" name="name" required>
+				<label for="number">ProductPrice:</label>
+				<input type="number" id="product_price" name="number" required>
+				<label for="name">Discount:</label>
+				<input type="text" id="product_discount" name="name" required>
+				<label for="name">Description:</label>
+				<textarea type="text" id="product_desciption" name="name" required></textarea>
+			</div>
+
+			<button class="submit" onclick="upload()" type="submit">Upload</button>
+		</form>
+	</section>
+
+	<script>
+		function upload() {
+			event.preventDefault()
+
+			let name = document.getElementById("product_name").value
+			let type = document.getElementById("Category").value
+			let image1 = document.getElementById("main-image").value
+			let image2 = document.getElementById("sub-img1").value
+			let image3 = document.getElementById("sub-img2").value
+			let image4 = document.getElementById("sub-img3").value
+			let size = document.getElementById("product_size").value
+			let price = document.getElementById("product_price").value
+			let discount = document.getElementById("product_discount").value
+			let description = document.getElementById("product_desciption").value
+
+			let unique_id = crypto.randomUUID()
+
+			let product_details = JSON.parse(localStorage.getItem("product_details")) || [];
+
+			product_details.push({ name, type, image1, image2, image3, image4, size, price, discount, description, unique_id });
+
+			localStorage.setItem("product_details", JSON.stringify(product_details));
+            
+			location.href = "./product_edit_form.html"
+
+			document.querySelector("form").reset();
+		}
+
+	</script>
 
 
 
-	</form>
 
-	<script src="./product.js"></script>
 </body>
 
 </html>

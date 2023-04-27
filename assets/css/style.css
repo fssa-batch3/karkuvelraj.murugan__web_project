@@ -1087,3 +1087,6 @@ body>footer>div.social-icon>div.insta>i:hover {
     bottom: 12px;
   }
 }
+#des_details{
+  max-width: 480px;
+}

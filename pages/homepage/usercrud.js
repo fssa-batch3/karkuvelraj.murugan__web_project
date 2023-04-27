@@ -43,7 +43,7 @@ function signUp(e) {
        document.getElementById('user_number');
        document.getElementById('user_name');
       alert('Account created Successfully');
-      location.href = "../homepage/profile.html";
+      location.href = "./login.html";
 
     }
     else {
@@ -133,7 +133,7 @@ function signIn(e){
   }
 
 
-  ///////// edit page///////////
+  ///////// Edit page///////////
 
   function eprofile_details(e){
           user_data["user_name"] = document.getElementById("user_name").value;
@@ -155,7 +155,7 @@ function signIn(e){
           }
 
 
-  // delete function
+  // Delete function
 
   document.getElementById("delete").addEventListener("click",deleteaccount);
 

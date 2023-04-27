@@ -31,6 +31,8 @@
     position: relative;
     left: 121px;
     z-index: 1;
+    left: 117px;
+    font-size: 25px;
 }
 
 .like{
@@ -182,12 +184,22 @@ ul li {
     bottom: 10px;
 }
 
-.product-container {
-    flex-basis: 1100px;
+/* .product-container { */
+    /* flex-basis: 1100px;
     box-shadow: 5px 5px 10px rgb(192, 191, 191);
     margin-top: 30px;
     margin-left: 30px;
     /* margin-left: 290px; */
+/* }  */
+section.product-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 1000px;
+    flex-direction: row;
+    /* align-content: space-around;
+    justify-content: space-around; */
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 input[type=search] {
@@ -217,6 +229,8 @@ input[type=search] {
     background-size: cover;
     overflow: hidden;
     position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
 .card-details {
@@ -329,4 +343,9 @@ img {
     display: flex;
     justify-content: space-evenly;
 
+}
+.btn_like{
+    /* visibility: hidden; */
+    width: 50px;
+    height: 50px;
 }

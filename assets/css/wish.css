@@ -1,77 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sarabun:wght@500&display=swap');
-*{
- transition: all ease-out;
- font-family: 'Sarabun', sans-serif;
- text-decoration: none;
-
-
-}
-.heart{
-    position: relative;
-    top: 30px;
-    left: 700px;
+.product-card {
+  width: 200px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
 }
 
-.heading{
-    font-size: 50px;
-    text-align: center;
-    margin-left: 50px;
-    background: -webkit-linear-gradient(45deg, #09009F, #00FF95 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
 
+.product-name {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
-.title{
-    display: flex;
-    justify-content: space-evenly;
-    color: rgb(73, 73, 73);
-    border-bottom: 1px solid goldenrod;
-    position: relative;
-    right: 45px;
-}
-ul li {
-    display: inline;
-    padding: 30px;
-    position: relative;
-    top: 17px;
-    color: black;
 
+.price {
+  margin-bottom: 10px;
 }
-.nav-container{
-    display: flex;
-    justify-content: space-evenly;
-    background-color: goldenrod;
+
+.unit-price {
+  font-size: 16px;
+  font-weight: bold;
 }
-.products{
-    display: flex;
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    height: 30vh;
-    border-bottom: 1px solid goldenrod;
+
+.discount-price {
+  font-size: 14px;
+  text-decoration: line-through;
 }
-.rupee{
-    display: inline-block;
+
+.stock-status {
+  font-size: 14px;
+  color: green;
+  margin-bottom: 10px;
 }
-.del{
-    text-decoration: line-through;
-    background-color: gold;
+
+.actions {
+  display: flex;
+  justify-content: space-between;
 }
-.order{
-    position: relative;
-    left: 10px;
-    width: 130px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    background-color: goldenrod;
-    border: 0.5px solid goldenrod;
+
+.buy-button,
+.remove-button {
+  width: 100px;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
-.cart{
-    width: 160px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    color: goldenrod;
-    background-color: black;
+
+.buy-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.remove-button {
+  background-color: #f44336;
+  color: white;
 }

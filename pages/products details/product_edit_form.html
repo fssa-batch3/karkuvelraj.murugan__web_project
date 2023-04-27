@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Signup Page</title>
+    <link rel="stylesheet" href="../../assets/css/men.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <section class="product-container">
+    </section>
+
+    <script>
+
+        const product_details = JSON.parse(localStorage.getItem("product_details"));
+        console.log(product_details);
+
+        for (let j = 0; j < product_details.length; j++) {
+
+
+            // let card_container1 = document.createElement("div");
+            // card_container1.setAttribute("class", "card-container");
+
+            let div_card0 = document.createElement("div");
+            div_card0.setAttribute("class", "card");
+            // card_container1.append(div_card0);
+
+            let div_card1 = document.createElement("div");
+            div_card1.setAttribute("class", "card-content");
+            div_card0.append(div_card1);
+
+            let img = document.createElement("img");
+            img.setAttribute("src", product_details[j]["image1"]);
+            img.setAttribute("alt", "shirt");
+            img.setAttribute("width", "260px");
+            img.setAttribute("height", "350px");
+            div_card1.append(img);
+
+            let div_card2 = document.createElement("div");
+            div_card2.setAttribute("class", "card-title");
+            div_card1.append(div_card2);
+
+            let h3 = document.createElement("h3");
+            h3.setAttribute("class", "product-name");
+            h3.innerText = product_details[j]["name"];
+            div_card2.append(h3);
+
+            let div_card3 = document.createElement("div");
+            div_card3.setAttribute("class", "card-details");
+            div_card0.append(div_card3);
+
+            let h1 = document.createElement("h1");
+            h1.innerText = product_details[j]["price"];
+            div_card3.append(h1);
+
+            let p = document.createElement("p");
+            p.innerText = product_details[j]["type"];
+            div_card3.append(p);
+
+            let btn = document.createElement("button");
+            btn.setAttribute("class", "buy");
+            btn.setAttribute("id", "edit")
+            btn.setAttribute("data-id", product_details[j]["unique_id"])
+            btn.innerText = "Edit";
+            div_card3.append(btn);
+
+            let btn1 = document.createElement("button");
+            btn1.setAttribute("class", "cart");
+            btn1.setAttribute("id", "delete")
+            btn1.setAttribute("data-id", product_details[j]["unique_id"])
+            btn1.innerText = "Delete";
+            div_card3.append(btn1);
+
+            let productContainer = document.querySelector(".product-container");
+            productContainer.append(div_card0);
+
+        }
+
+        // Edit function
+        let edit_page = document.querySelectorAll("button.buy")
+        edit_page.forEach(function (find) {
+            find.addEventListener("click", function () {
+                let product_id = this.dataset.id;
+                localStorage.setItem("uniqueId", JSON.stringify(product_id));
+                window.location.href = `../products details/productsave.html?product_id=${product_id}`;
+                console.log(edit_page)
+            })
+        })
+
+                // Delete function
+
+        document.getElementById("delete").addEventListener("click", deleteaccount);
+        function deleteaccount(e) {
+            if (confirm("Are You Sure on deleting?")) {
+                e.preventDefault()
+                let uniqueId = JSON.parse(localStorage.getItem("uniqueId"));
+                let product_details = JSON.parse(localStorage.getItem("product_details"));
+
+                function login_data(e) {
+                    return e.product_details == uniqueId;
+                }
+
+                user_data = product_details.find(login_data);
+
+                const indexOFUser = product_details.indexOf(user_data);
+
+                product_details.splice(indexOFUser, 1);
+
+                localStorage.setItem("product_details", JSON.stringify(product_details));
+                location.reload();
+
+                // location.href = "../login/Signup.html";
+            }
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

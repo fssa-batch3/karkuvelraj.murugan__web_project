@@ -16,34 +16,8 @@
 </head>
 
 <body class="body">
-  <header class="navbar">
-    <div class="nav-items">
-      <img class="logo" src="./assets/images/logo1.png" width="130px" alt="logo">
-      <input class="searchbox" type="text" placeholder="Search items" name="search" width="500px">
-      <span class="search">
-        <i class="fa fa-search" style="font-size:24px"></i>
-
-      </span>
-
-
-    </div>
-
-    <div class="icon">
-      <a href="./pages/homepage/cart.html"><button class="my-button">Cart</button>
-      </a>
-      <a href="./pages/homepage/wish.html"> <button class="my-button">Wishlist</button>
-      </a>
-      <a href="./pages/homepage/sign-up.html"> <button class="my-button">User</button>
-        <div class="dropdown-content">
-          <a href="#">SHIRT</a>
-          <a href="#">T-SHIRT</a>
-        </div>
-      </a>
-
-
-    </div>
-
-
+  <header class="navbar" id="userLogin">
+    <a href="./assets/images/logo1.png"></a>
   </header>
 
   <div class="nav-container">
@@ -84,6 +58,8 @@
 
         <li><a href="./pages/homepage/about.html">About Us</a> </li>
         <li> <a href="./pages/homepage/contact.html">Contact</a></li>
+        <li> <a href="./pages/homepage/seller.html">Admin</a></li>
+
       </ul>
 
     </div>
@@ -199,6 +175,12 @@
 
 
   <script src="./pages/products details/product.js"></script>
+
+<script src="./assets/header.js"> </script>
+<script>
+  header();
+</script>
+
 </body>
 
 
