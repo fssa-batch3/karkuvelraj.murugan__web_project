@@ -1,163 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-<body>
-  <div class="nav-container">
-    <div class="nav-links">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
+    <body>
+     
+                    <div class="sections">
+                        <ul>
+                        <a href="${logo_path}"><li>Home</li></a>
+                        <a href="${men}"><li>Men</li></a>
+                        <a href="${women}"><li>Women</li></a>
+                        <a href="${kids}"><li>Kids</li></a>
+                        </ul>
+                    </div>
 
-        <div class="dropdown">
-          <li><a href="../products/men.html">Men</a> </li>
+                    
 
-          <div class="dropdown-content">
-            <a href="#">SHIRT</a>
-            <a href="#">T-SHIRT</a>
-            <a href="#">PANT</a>
+        <section class="product-details">
+            <div class="product">
+                <div class="gold">
 
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../products/women.html">Women</a> </li>
+                </div>
+                <div class="gape" ></div>
+                <div class="gape1"></div>
+                <div class="gape2"></div>
+            </div>
+            <div class="details">
+                <h1 id="category" style="font-size:40px"></h1>
+                <h3 id="prod-type"></h3>
+                <div class="rating">
+                    <i class="fa fa-star" style="color:goldenrod"></i>
+                </div>
+                <span class="shoe-type"></span>
+                <h5></h5>
+                <div class="size-container">
+                    <span class="size">
+                        <p id="size-s"></p>
+                    </span>
+                    <span class="size">
+                        <p id="size-M"></p>
+                    </span>
+                    <span class="size">
+                        <p id="size-L"></p>
+                    </span>
+                    <span class="size">
+                        <p id="size-XL"></p>
+                    </span>
+                </div>
+                <p id="current" class="doller"></p>
+                <span id="original" class="del"></span>
+                <span id="offer"
+                    class="discount"></span>
+                <!-- <div class="rating-star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div> -->
+                <strong>
+                    <p id="about_item"></p>
+                </strong>
 
-          <div class="dropdown-content">
-            <a href="#">Suti</a>
-            <a href="#">Tops</a>
-            <a href="#">Saree's</a>
-            <a href="#">Night Dress</a>
+                <p id="des_details"></p>
 
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../products/kid.html">Kids</a> </li>
+                <span class="shopping">
+                    <a href="">
+                        <i class="fa fa-shopping-cart" style="color:goldenrod"></i>
+                    </a>
 
-          <div class="dropdown-content">
-            <a href="#">Dress</a>
-            <a href="#">Toys</a>
-            <a href="#">Modern dresses</a>
-          </div>
-        </div>
+                </span>
 
-        <li><a href="../homepage/about.html">About Us</a> </li>
-        <li> <a href="../homepage/contact.html">Contact</a></li>
-      </ul>
-    </div>
+                <button id="add_to_cart" class="cart"></button>
+                <i class="arrow">&#10148;
+                </i>
+                <a href="../checkout page/checout.html?puid=${product_unique_id}">
+                    <button id="add_to_buy" class="order"></button>
+                </a>
+            </div>
 
-  </div>
-  <section class="product-details">
+        </section>
+        <script>const urlParams = new URLSearchParams(window.location.search);
 
-    <div class="product">
-      <div class="gold">
+    const product_unique_id = urlParams.get("product_uniqueId");
 
-      </div>
-      <div class="gape"></div>
-      <div class="gape"></div>
-      <div class="gape"></div>
-    </div>
-    <div class="details">
-      <h1 id="category" style="font-size:40px"></h1>
-      <h3 id="prod-type"></h3>
-      <div class="rating"> <i class="fa fa-star" style="color:goldenrod"></i></div>
-      <span class="shoe-type"></span>
-      <h5></h5>
-      <div class="size-container">
-        <span class="size">
-          <p id="size-s"></p>
-        </span> <span class="size">
-          <p id="size-M"></p>
-        </span> <span class="size">
-          <p id="size-L"></p>
-        </span> <span class="size">
-          <p id="size-XL"></p>
-        </span>
-      </div>
-      <p id="current" class="doller"></p> <span id="original" class="del"></span> <span id="offer"
-        class="discount"></span>
-      <div class="rating-star">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <strong>
-        <p id="about_item"></p>
-      </strong>
+    const product = JSON.parse(localStorage.getItem("product_details"));
 
-      <p id="des_details"></p>
-
-
-      <span class="shopping">
-        <a href=""><i class="fa fa-shopping-cart" style="color:goldenrod"></i></a>
-
-      </span>
-
-      <button id="add_to_cart" class="cart"></button>
-      <i class="arrow">&#10148;
-      </i>
-      <a href="./checout.html"> <button id="add_to_buy" class="order"></button></a>
-    </div>
-
-  </section>
-  <script>
-
-    const urlParams = new URLSearchParams(window.location.search);
-
-    const product_unique_id = urlParams.get('product_uniqueId');
-
-    let product = JSON.parse(localStorage.getItem("product_details"));
-
-    let unique_product = product.filter(e => e.unique_id == product_unique_id);
+    const unique_product = product.filter((e) => e.unique_id == product_unique_id);
     console.log(unique_product);
 
-
-
     img1 = document.createElement("img");
-    img1.setAttribute("src", unique_product[0]["image1"]);
+    img1.setAttribute("src", unique_product[0].image1);
     img1.setAttribute("alt", "shoe");
     img1.setAttribute("width", "410");
     img1.setAttribute("height", "400");
-    document.querySelector("div.gold").append(img1)
-
-
+    document.querySelector("div.gold").append(img1);
 
     img2 = document.createElement("img");
-    img2.setAttribute("src", unique_product[0]["image2"]);
+    img2.setAttribute("src", unique_product[0].image2);
+    // img2.setAttribute(" onclick",unique_product[0].image2);
     img2.setAttribute("alt", "shoe");
     img2.setAttribute("width", "100px");
     img2.setAttribute("height", "80px");
     document.querySelector("div.gape").append(img2);
 
-
     img3 = document.createElement("img");
-    img3.setAttribute("src", unique_product[0]["image3"]);
+    img3.setAttribute("src", unique_product[0].image3);
+    // img2.setAttribute("onclick",big(unique_product[0].image3));
     img3.setAttribute("alt", "shoe");
     img3.setAttribute("width", "100px");
-    img3.setAttribute("height", "60px");
-    document.querySelector("div.gape").append(img3)
-
+    img3.setAttribute("height", "80px");
+    document.querySelector("div.gape1").append(img3);
 
     img4 = document.createElement("img");
-    img4.setAttribute("src", unique_product[0]["image4"]);
+    img4.setAttribute("src", unique_product[0].image4);
+    // img2.setAttribute(" onclick",unique_product[0].image4);
     img4.setAttribute("alt", "shoe");
     img4.setAttribute("width", "100px");
-    img4.setAttribute("height", "60px");
-    document.querySelector("div.gape").append(img4);
+    img4.setAttribute("height", "80px");
+    document.querySelector("div.gape2").append(img4);
 
     category = document.querySelector("h1#category");
-    category.innerText = unique_product[0]["name"];
+    category.innerText = unique_product[0].name;
 
     category = document.querySelector("h3#prod-type");
-    category.innerText = unique_product[0]["type"];
-
+    category.innerText = unique_product[0].type;
 
     category = document.querySelector("h5");
     category.innerText = "Choose Size:";
@@ -178,116 +151,125 @@
     category.innerText = "389";
 
     category = document.querySelector("span#original");
-    category.innerText = unique_product[0]["price"];
+    category.innerText = unique_product[0].price;
 
     category = document.querySelector("span#offer");
-    category.innerText = unique_product[0]["discount"];
+    category.innerText = unique_product[0].discount;
 
     category = document.querySelector("p#des_details");
-    category.innerText = unique_product[0]["description"];
+    category.innerText = unique_product[0].description;
 
     category = document.querySelector("button#add_to_cart");
-    category.setAttribute("data-id", unique_product[0]["unique_id"])
+    category.setAttribute("data-id", unique_product[0].unique_id);
     category.innerText = "Add To Cart";
 
     category = document.querySelector("button#add_to_buy");
     category.innerText = "Buy now";
 
-
     // ADD TO CART
 
-    let cart = document.querySelector("#add_to_cart");
+    const cart = document.querySelector("#add_to_cart");
 
 cart.addEventListener("click", function () {
-  let product_id = this.dataset.id;
+  const product_id = this.dataset.id;
 
-  localStorage.setItem("product_id", JSON.stringify(product_id));
+  localStorage.setItem("cart_id", JSON.stringify(product_id));
+//   console.log(product_id)
 
-  let uid = JSON.parse(localStorage.getItem("userId"));
-  let userlist = JSON.parse(localStorage.getItem("user_list"));
+  const uid = JSON.parse(localStorage.getItem("userId"));
+  const userlist = JSON.parse(localStorage.getItem("user_list"));
 
-  let users = userlist.length && 
-              JSON.parse(localStorage.getItem("user_list")).some(data => data.user_email === uid );
+  const users =
+    userlist.length &&
+        JSON.parse(localStorage.getItem("user_list")).some(
+          (data) => data.user_email === uid
+    );
 
   if (!users) {
-    alert("you are not logged in");
+        alert("you are not logged in");
   } else {
-    let product_id = JSON.parse(localStorage.getItem("product_id"));
-    let product_list = JSON.parse(localStorage.getItem("product_details"));
-    let products = product_list.find(e => e.unique_id === product_id);
-    let cart_products = JSON.parse(localStorage.getItem("cart")) || [];
-    let already_cart = 
-      cart_products.length && JSON.parse(localStorage.getItem("cart")).some(data => data.productid === product_id && data.userid === uid);
+        const product_id = JSON.parse(localStorage.getItem("cart_id"));
+        const product_list = JSON.parse(localStorage.getItem("product_details"));
+        const products = product_list.find((e) => e.unique_id === product_id);
+        const cart_products = JSON.parse(localStorage.getItem("cart")) || [];
 
-    if (already_cart) {
-      alert("This product has already been added to your cart.");
-    } else {
-      alert("This product has been added to your cart.");
-      cart_products.push({
-        productid: products["unique_id"],
-        userid: uid
-      });
-      localStorage.setItem("cart", JSON.stringify(cart_products));
-      window.location.href = "../homepage/cart.html";
-    }
+
+        const already_cart =
+          cart_products.length &&
+          JSON.parse(localStorage.getItem("cart")).some(
+            (data) => data.productid === product_id && data.userid === uid
+      );
+
+        if (already_cart) {
+          alert("This product has already been added to your cart.");
+        } else {
+          alert("This product has been added to your cart.");
+          cart_products.push({
+            productid: products.unique_id,
+            userid: uid,
+            product_quantity: 1
+          });
+          localStorage.setItem("cart", JSON.stringify(cart_products));
+          window.location.href = "../homepage/cart.html";
+        }
   }
 });
 
+function big(img){
+    document.querySelector('.gold').src=img;
+}
 
-  //   let cart = document.querySelector("#add_to_cart");
+//   let cart = document.querySelector("#add_to_cart");
 
-  //   cart.addEventListener("click", function () {
-  //     let product_id = this.dataset.id;
+//   cart.addEventListener("click", function () {
+//     let product_id = this.dataset.id;
 
-  //     localStorage.setItem("product_id", JSON.stringify(product_id))
-  //     // console.log(product_id)
-  //     let uid = JSON.parse(localStorage.getItem("userId"));
-  //     // console.log(uid);
-  //     let userlist = JSON.parse(localStorage.getItem("user_list"));
-  //     // console.log(userlist);
+//     localStorage.setItem("product_id", JSON.stringify(product_id))
+//     // console.log(product_id)
+//     let uid = JSON.parse(localStorage.getItem("userId"));
+//     // console.log(uid);
+//     let userlist = JSON.parse(localStorage.getItem("user_list"));
+//     // console.log(userlist);
+
+//   let users = userlist.length &&
+//               JSON.parse(localStorage.getItem("user_list")).some(data => data.user_email === uid );
+//   console.log(users)
+
+//   if (!users) {
+//     alert("you are not logedin");
+//   } else {
+//       let product_id = JSON.parse(localStorage.getItem("product_id"))
+//     console.log(product_id)
     
+//     let product_list = JSON.parse(localStorage.getItem("product_details"));
 
-  //   let users = userlist.length && 
-  //               JSON.parse(localStorage.getItem("user_list")).some(data => data.user_email === uid );
-  //   console.log(users)
+//     let products = product_list.find(e => e.unique_id === product_id)
 
-  //   if (!users) {
-  //     alert("you are not logedin");
-  //   } else {
-  //       let product_id = JSON.parse(localStorage.getItem("product_id"))
-  //     console.log(product_id)
-       
-  //     let product_list = JSON.parse(localStorage.getItem("product_details"));
+//     // console.log(products)
+//     let cart_products = JSON.parse(localStorage.getItem("cart")) || [];
+//     // console.log(cart_products)
 
-  //     let products = product_list.find(e => e.unique_id === product_id)
+//     let already_cart =
+//     cart_products.length && JSON.parse(localStorage.getItem("cart")).some
+//     (data => data.productid === product_id && data.userid === uid)
+//     console.log(already_cart)
 
-  //     // console.log(products)
-  //     let cart_products = JSON.parse(localStorage.getItem("cart")) || [];
-  //     // console.log(cart_products)
-
-  //     let already_cart = 
-  //     cart_products.length && JSON.parse(localStorage.getItem("cart")).some
-  //     (data => data.productid === product_id && data.userid === uid)
-  //     console.log(already_cart)
-
-  //     if (already_cart) {
-  //       alert("This product has already been added");
-  //     }
-  //     else {
-  //       alert("This product is added to your cart");
-  //       cart_products.push({
-  //         productid: products["unique_id"],
-  //         userid: uid
-  //       })
-  //       localStorage.setItem("cart", JSON.stringify(cart_products));
-  //       window.location.href = "../homepage/cart.html";
-  //     }
-  //   }
-  // })
-    
-
+//     if (already_cart) {
+//       alert("This product has already been added");
+//     }
+//     else {
+//       alert("This product is added to your cart");
+//       cart_products.push({
+//         productid: products["unique_id"],
+//         userid: uid
+//       })
+//       localStorage.setItem("cart", JSON.stringify(cart_products));
+//       window.location.href = "../homepage/cart.html";
+//     }
+//   }
+// })
   </script>
 
-</body>
+    </body>
 
 </html>

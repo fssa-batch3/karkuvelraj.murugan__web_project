@@ -1,207 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../assets/css/cart.css">
-  <title>Cart Page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../assets/css/cart.css">
+        <title>Cart Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
 
-<body>
-  <div class="nav-container">
-    <div class="nav-links">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-
-        <div class="dropdown">
-          <li><a href="../product categories/men.html">Men</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">SHIRT</a>
-            <a href="#">T-SHIRT</a>
-            <a href="#">PANT</a>
-
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../product categories/women.html">Women</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">Suti</a>
-            <a href="#">Tops</a>
-            <a href="#">Saree's</a>
-            <a href="#">Night Dress</a>
-
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../product categories/kids.html">Kids</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">Dress</a>
-            <a href="#">Toys</a>
-            <a href="#">Modern dresses</a>
-          </div>
-        </div>
-
-        <li><a href="../homepage/about.html">About Us</a> </li>
-        <li> <a href="../homepage/contact.html">Contact</a></li>
-      </ul>
-
+    <body>
+      
+    <div class="sections">
+        <ul>
+            <a href="../../index.html"><li>Home</li></a>
+            <a href="../product categories/men.html"><li>Men</li></a>
+            <a href="../product categories/women.html"><li>Women</li></a>
+            <a href="../product categories/kids.html"><li>Kids</li></a>
+        </ul>
     </div>
+            
+        <section id="container" class="cartcontainer">
+        <section class="cart-container"> </section>
 
-  </div>
-  <!-- <div class="heading">
-        <input type="checkbox" name="" id="">
-    <span> 3/3 Items Selected</span>
-    <SPAN>Remove|</span> <span>Move To Wishlist</span>
-    </div> -->
+            <div class="cart-rightcol">
+                <div class="price-container">
+                    <div class="price-details">
+                        <p class="price">Price Details</p>
+                        <p>
+                            Discount <span class="rate">300</span>
+                        </p>
+                        <p class="gape">
+                            Price<span class="rate" id="total_price">1,200</span>
+                        </p>
+                        <p>
+                            Delivery Charges<span class="rate">FREE</span>
+                        </p>
+                        <p class="total">
+                            Total Amount <span class="rate" id="total">900</span>
+                        </p>
+                        <button class="order">Order Now</button>
+                    </div>
 
-  <section id="container"class="cart-container">
+                </div>
+            </div>
 
-    
+        </section>
 
-    <div class="cart-rightcol">
-      <div class="price-container">
-        <div class="price-details">
-          <p class="price">Price Details</p>
-          <p>Discount <span class="rate">300</span></p>
-          <p class="gape">Price(3items)<span class="rate">1,200</span></p>
-          <p>Delivery Charges<span class="rate">FREE</span></p>
-          <p class="total">Total Amount <span class="rate">900</span></p>
-          <button class="order">Order Now</button>
-        </div>
+        <script>
+    const cart_products = JSON.parse(localStorage.getItem("cart"));
 
+    const all_products = JSON.parse(localStorage.getItem("product_details"));
 
-      </div>
-    </div>
+    const user_id = JSON.parse(localStorage.getItem("userId"));
 
+    const check_pdt = cart_products.filter((e) => e.userid === user_id);
 
-  </section>
-
-  <script>
-
-    let cart_products = JSON.parse(localStorage.getItem("cart"));
-
-    let all_products = JSON.parse(localStorage.getItem("product_details"));
-
-    let user_id = JSON.parse(localStorage.getItem("userId"));
-
-    let check_pdt = cart_products.filter(e => e.userid === user_id);
-    console.log(check_pdt)
-
-    let all_product = all_products.filter(e => check_pdt.some(id=> e.unique_id===id.productid) );
-    console.log(all_product)
-
+    const all_product = all_products.filter((e) =>
+  check_pdt.some((id) => e.unique_id === id.productid)
+);
 
     for (i = 0; i < all_product.length; i++) {
+      // create the parent container
+      const parent = document.createElement("div");
+      parent.classList.add("cart-leftcol");
 
-// create the parent container
-const parent = document.createElement("div");
-parent.classList.add("cart-leftcol");
+      // create the details container
+      const details = document.createElement("div");
+      details.classList.add("cart-details");
+      parent.appendChild(details);
 
-// create the details container
-const details = document.createElement("div");
-details.classList.add("cart-details");
-parent.appendChild(details);
+      // create the list container
+      const list = document.createElement("div");
+      list.classList.add("cart-list");
+      details.appendChild(list);
 
-// create the list container
-const list = document.createElement("div");
-list.classList.add("cart-list");
-details.appendChild(list);
+      // create the image element
+      const img = document.createElement("img");
+      img.src = all_product[i].image1;
+      img.width = "150";
+      img.height = "185";
+      img.alt = all_product[i].name;
+      list.appendChild(img);
 
-// create the image element
-const img = document.createElement("img");
-img.src = all_product[i]["image1"];
-img.width = "150";
-img.height = "185";
-img.alt = all_product[i]["name"];
-list.appendChild(img);
+      // create the content container
+      const content = document.createElement("div");
+      content.classList.add("cart-content");
+      details.appendChild(content);
 
-// create the content container
-const content = document.createElement("div");
-content.classList.add("cart-content");
-details.appendChild(content);
+      // create the shirt name header
+      const name = document.createElement("h4");
+      name.classList.add("shirt-name");
+      name.innerText = all_product[i].name;
+      content.appendChild(name);
 
-// create the shirt name header
-const name = document.createElement("h4");
-name.classList.add("shirt-name");
-name.innerText = all_product[i]["name"];
-content.appendChild(name);
+      // create the size element
+      const size = document.createElement("div");
+      size.classList.add("size");
+      size.innerText = `Size : ${all_product[i].size}`;
+      content.appendChild(size);
 
-// create the size element
-const size = document.createElement("div");
-size.classList.add("size");
-size.innerText = "Size : " + all_product[i]["size"];
-content.appendChild(size);
+      // create the price and discount container
+      const c1 = document.createElement("div");
+      c1.classList.add("c1");
+      content.appendChild(c1);
 
-// create the price and discount container
-const c1 = document.createElement("div");
-c1.classList.add("c1");
-content.appendChild(c1);
+      // create the price element
+      const price = document.createElement("p");
+      price.classList.add("doller");
+      price.innerText = `₹${all_product[i].price}`;
+      c1.appendChild(price);
 
-// create the price element
-const price = document.createElement("p");
-price.classList.add("doller");
-price.innerText = "₹" + all_product[i]["price"];
-c1.appendChild(price);
+      // create the original price element
+      const originalPrice = document.createElement("span");
+      originalPrice.classList.add("del");
+      originalPrice.innerText = "₹300";
+      c1.appendChild(originalPrice);
 
-// create the original price element
-const originalPrice = document.createElement("span");
-originalPrice.classList.add("del");
-originalPrice.innerText = "₹300";
-c1.appendChild(originalPrice);
+      // create the discount element
+    //   const discount = document.createElement("span");
+    //   discount.classList.add("discount");
+    //   discount.innerText = `${all_product[i].discount}discount`;
+    //   c1.appendChild(discount);
 
-// create the discount element
-const discount = document.createElement("span");
-discount.classList.add("discount");
-discount.innerText = all_product[i]["discount"] +  "discount";
-c1.appendChild(discount);
+      // create the buy now button
+      const buy = document.createElement("button");
+      buy.classList.add("buy");
+      buy.innerText = "Move to wishlist";
+      c1.appendChild(buy);
 
-// create the buy now button
-const buy = document.createElement("button");
-buy.classList.add("buy");
-buy.innerText = "BUY NOW";
-c1.appendChild(buy);
+    //   const input = document.createElement("input");
+    //   input.setAttribute("type", "number");
+    //   input.setAttribute("id", "quantity");
+    //   input.setAttribute("value", all_product[i].product_quantity);
+    //   input.setAttribute("min", "1");
+    //   input.setAttribute("max", "8");
+    //   input.setAttribute("data-id", all_product[i].unique_id);
+    //   buy.appendChild(input);
 
-const input = document.createElement('input');
-input.setAttribute('type', 'number');
-input.setAttribute('id', 'quantity');
-input.setAttribute('min', '0');
-input.setAttribute('max', '8');
+      // create the close link
+      const close = document.createElement("a");
+      close.setAttribute("data-id", all_product[i].unique_id);
+      close.classList.add("close");
+      c1.appendChild(close);
+      console.log(close);
 
-buy.appendChild(input);
+      // create the close icon
+      const closeIcon = document.createElement("i");
+      closeIcon.classList.add("fa", "fa-close");
+      closeIcon.style.fontSize = "20px";
+      close.appendChild(closeIcon);
 
-// create the close link
-const close = document.createElement("a");
-close.href = "";
-close.classList.add("close");
-c1.appendChild(close);
-
-// create the close icon
-const closeIcon = document.createElement("i");
-closeIcon.classList.add("fa", "fa-close");
-closeIcon.style.fontSize = "20px";
-close.appendChild(closeIcon);
-
-
-
-
-
-let cartcontainer = document.querySelector(".cart-container");
-cartcontainer.append(parent);
-
-
-
-
+      const cartcontainer = document.querySelector(".cart-container");
+      cartcontainer.append(parent);
     }
 
+    const remove_icon = document.querySelectorAll(".close");
+    remove_icon.forEach(function (removeItem) {
+      removeItem.addEventListener("click", function () {
+        if (confirm("Delete")) {
+          const get_id = this.dataset.id;
 
+          const All_products = JSON.parse(localStorage.getItem("cart"));
+          const find_products = All_products.find((e) => e.productid == get_id);
+          const find_index = All_products.indexOf(find_products);
+          All_products.splice(find_index, 1);
+          localStorage.setItem("cart", JSON.stringify(All_products));
+          window.location.reload();
+        }
+      });
+    });
+
+    let total_amt = 0;
+for (let l=0; l<all_product.length; l++){
+    total_amt += all_product[l].price * check_pdt[l].product_quantity;
+}
+console.log(total_amt);
+
+// quantity
+
+document.querySelectorAll("input").forEach((add) => {
+    add.addEventListener("change", (r) => {
+        let product_id = r.currentTarget.dataset.id;
+        localStorage.setItem("product_id", JSON.stringify(product_id));
+        console.log(product_id);
+        const cart_pdt = JSON.parse(localStorage.getItem("cart"));
+        const pdts = all_product.find((e) => e.unique_id === product_id);
+        console.log(pdts);
+        let prices = pdts.price;
+        console.log(prices);
+
+        const parent = r.currentTarget.closest(".cart-leftcol");
+
+        const quantity = parent.querySelector("#quantity").value;
+        const cartPrice = prices * quantity;
+        console.log(cartPrice);
+        prices = cartPrice;
+        cart_pdt.product_quantity = quantity;
+        console.log(pdts.product_quantity);
+        localStorage.setItem("cart", JSON.stringify(cart_pdt));
+        window.localStorage.reload;
+    })
+})
+
+document.getElementById("total").innerText = total_amt;
+document.getElementById("total_price").innerText = total_amt;
 
   </script>
-</body>
+    </body>
 
 </html>
