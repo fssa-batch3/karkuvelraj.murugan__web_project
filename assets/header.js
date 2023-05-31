@@ -3,7 +3,7 @@ const logo = `${rootpath}/assets/images/logo1.png`;
 const logo_path = `${rootpath}/index.html`;
 const signup = `${rootpath}/pages/homepage/sign-up.html`;
 const signin = `${rootpath}/pages/homepage/login.html`;
-const cart = `${rootpath}/pages/homepage/cart.html`;
+const cart1= `${rootpath}/pages/homepage/cart.html`;
 const wishlist = `${rootpath}/pages/homepage/wish.html`;
 const men = `${rootpath}/pages/product categories/men.html`;
 const women = `${rootpath}/pages/product categories/women.html`;
@@ -11,6 +11,7 @@ const kids = `${rootpath}/pages/product categories/kids.html`;
 const admin = `${rootpath}/pages/homepage/seller.html`;
 const about = `${rootpath}/pages/homepage/about.html`;
 const profile = `${rootpath}/pages/homepage/profile.html`;
+const avatar =`${rootpath}/assets/images/avatar6.png`
 
 
 const after_login = `<nav class="nav-container">
@@ -29,18 +30,16 @@ const after_login = `<nav class="nav-container">
                     <h3 class="Category"><a href="${about}">About</a></h3>
                 </li>
             </ul>
-                <div class="search"><input type="text" name="searchbar" id="search_bar"></div>
+                <input type="text" class="search" name="searchbar" id="search_bar">
 
                 <ul class="dropdown">
                     <li>
-                        <img src="../assets/images/avatar6.png" alt="Avatar" class="avatar"> 
-
+                        <img src="${avatar}" alt="Avatar" class="avatar"> 
                     </li>
-
                     <div class="dropdown-content">
                         <a href="${profile}"> <i class="fa fa-user"></i>
                             Profile</a>
-                        <a href="${cart}"> <i class="fa fa-shopping-cart"></i>Cart 
+                        <a href="${cart1}"> <i class="fa fa-shopping-cart"></i>Cart 
                         </a>
                         <div class="border-2"></div>
 
@@ -91,7 +90,7 @@ const before_login = ` <nav class="nav-container">
 
 <ul class="dropdown">
     <li>
-        <img src="../assets/images/avatar6.png" alt="Avatar" class="avatar"> 
+        <img src="${avatar}" alt="Avatar" class="avatar"> 
 
     </li>
 
@@ -115,15 +114,23 @@ const before_login = ` <nav class="nav-container">
 </ul>
 </div> `
 
-function header() {
-    const userId = JSON.parse(localStorage.getItem("userId"));
-    const userlogin = document.getElementById("userLogin");
-    if (!userId) {
-        userlogin.innerHTML = before_login;
-    } else {
-        userlogin.innerHTML = after_login;
-    }
+// function header() {
+//     const userId = JSON.parse(localStorage.getItem("userId"));
+//     const userlogin = document.getElementById("userLogin");
+//     if (!userId) {
+//         userlogin.innerHTML = before_login;
+//     } else {
+//         userlogin.innerHTML = after_login;
+//     }
+// }
+const userId = JSON.parse(localStorage.getItem("userId"));
+if(userId){
+    document.body.insertAdjacentHTML("afterbegin", after_login)
 }
+else{
+    document.body.insertAdjacentHTML("afterbegin", before_login)
+}
+
 
 function logout() {
     if (confirm("Are you sure to log out")) {

@@ -1,7 +1,7 @@
 
 
-const product_details =
-  JSON.parse(localStorage.getItem("product_details")) || [];
+  const product_details =
+    JSON.parse(localStorage.getItem("product_details")) || [];
   const fil = product_details.filter((e)=>e.type ==="Men")
 
 for (let j = 0; j < fil.length; j++) {
@@ -27,10 +27,10 @@ for (let j = 0; j < fil.length; j++) {
   div_card2.setAttribute("class", "card-title");
   div_card1.append(div_card2);
 
-  const h3 = document.createElement("h3");
-  h3.setAttribute("class", "product-name");
-  h3.innerText = fil[j].name;
-  div_card2.append(h3);
+  // const h3 = document.createElement("h3");
+  // h3.setAttribute("class", "product-name");
+  // h3.innerText = fil[j].name;
+  // div_card2.append(h3);
 
   const div_card3 = document.createElement("div");
   div_card3.setAttribute("class", "card-details");
@@ -46,13 +46,18 @@ for (let j = 0; j < fil.length; j++) {
   div_card4.innerText = "Wish"
   div_card3.append(div_card4);
 
-  const h1 = document.createElement("h1");
-  h1.innerText = fil[j].price;
-  div_card3.append(h1);
+  // const h3 = document.createElement("h3");
+  // h3.setAttribute("class", "product-name");
+  // h3.innerText = fil[j].name;
+  // div_card4.append(h3);
 
   const p = document.createElement("p");
-  p.innerText = fil[j].type;
+  p.innerText = fil[j].description;
   div_card3.append(p);
+
+  const h1 = document.createElement("h1");
+  h1.innerText ='₹'+ fil[j].current_price;
+  div_card3.append(h1);
 
   const a = document.createElement("a");
   a.setAttribute(
@@ -83,7 +88,7 @@ like_btn.forEach((e)=> {
   // console.log(findId)
       e.addEventListener("click", (el)=>{
         const get_id = el.target.dataset.id
-        // console.log(get_id);
+        console.log(get_id);
         localStorage.setItem("wish_id", JSON.stringify(get_id));
 
 
@@ -121,7 +126,6 @@ like_btn.forEach((e)=> {
         });
         localStorage.setItem("wish_details", JSON.stringify(wish_products));
       }
-
         }
       
       });

@@ -321,7 +321,10 @@ ul{
   color: white;
   z-index: 10;
 }
-
+.rate{
+  position: relative;
+  top: 7px;
+}
 .gold-pant {
   position: relative;
   left: 70px;
@@ -359,9 +362,9 @@ ul{
 }
 
 strong p {
-  border-bottom: 3px solid gold;
-  width: 80px;
-  margin: 10px 0;
+  /* border-bottom: 3px solid gold;
+  width: 120px; */
+  margin-top: 15px;
 }
 
 .product-brand {
@@ -402,6 +405,8 @@ strong p {
 
 .hero .left-col-hero p {
   margin: 40px 0;
+  position: relative;
+    right: 125px;
 }
 
 .hero .left-col-hero h1 {

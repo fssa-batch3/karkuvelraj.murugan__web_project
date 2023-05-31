@@ -139,11 +139,11 @@ ul li {
 
 }
 /* card details */
-.card-details p{
+/* .card-details p{
     max-width: 220px;
     position: relative;
     left: 20px;
-}
+} */
 .shop {
     width: 140px;
     height: 30px;
@@ -172,11 +172,10 @@ ul li {
     padding-left: 20px;
 }
   .product-name{
-    background-color: goldenrod;
     color: black;
-    height: 50px;
     position: relative;
-    top: 285px;
+    top: 30px;
+  
   }
 .border-1 {
     width: 300px;
@@ -253,19 +252,20 @@ input[type=search] {
     font-weight: bold;
 
 }
-.card-details h1{
-    position: relative;
-    top: 40px;
+body > section > section > div > div.card-details > h1{
+margin-top: 60px;
 }
 .card-details p{
     position: relative;
-    top: 40px;
+    top: 80px;
+     max-width: 220px;
+     left: 18px;
 }
-.card-details h2{
+.card-details h1{
     position: relative;
-    top: 40px;
+    top: 50px;
 }
- .card-title {
+ /* .card-title {
     position: absolute;
     left: 0;
     text-align: center;
@@ -273,9 +273,15 @@ input[type=search] {
     width: 100%;
     height: 18%;
     transition: 0.3s ease-in-out;
-    background: transparent;
     color: white;
-}
+ }
+     .product-name {
+    background-color: goldenrod;
+    color: black;
+    height: 30px;
+    /* position: relative; */
+    /* top: 85px; */
+/* }  */
 
 .card:hover .card-title {
     bottom: -75px;

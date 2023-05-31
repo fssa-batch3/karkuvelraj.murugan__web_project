@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>E-commerce Signup Page</title>
         <link rel="stylesheet" href="../../assets/css/men.css">
+		<link rel="stylesheet" href="../../assets/css/style.css">
+
         <style>
 		body {
 			font-family: Arial, sans-serif;
@@ -15,7 +17,7 @@
 		form {
 			background-color: white;
 			padding: 70px;
-			/* margin: 200px auto; */
+			margin: 200px auto;
 			max-width: 800px;
 			border-radius: 5px;
 			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -75,6 +77,15 @@
     </head>
 
     <body>
+		<div class="sections">
+            <ul>
+            
+            <a href="../../index.html"><li>Home</li></a>
+            <a href="../product categories/men.html"><li>Men</li></a>
+            <a href="../product categories/women.html"><li>Women</li></a>
+            <a href="../product categories/kids.html"><li>Kids</li></a>
+            </ul>
+            </div> 
         <section class="admin-container">
             <form class="product-form" role="form" id="upload" onsubmit="upload()">
                 <div>
@@ -99,7 +110,7 @@
                     <label for="name">Size:</label>
                     <input type="text" id="product_size" name="name" required>
                     <label for="number">ProductPrice:</label>
-                    <input type="number" id="product_price" name="number" required>
+                    <input type="number" min="1" id="product_price" name="number" required>
                     <label for="name">Discount:</label>
                     <input type="text" id="product_discount" name="name" required>
                     <label for="name">Description:</label>
@@ -122,10 +133,18 @@
 		  const image4 = document.getElementById("sub-img3").value;
 		  const size = document.getElementById("product_size").value;
 		  const price = document.getElementById("product_price").value;
+		  console.log(price);
 		  const discount = document.getElementById("product_discount").value;
+		  let current_price;
 		  const description = document.getElementById("product_desciption").value;
 
 		  const unique_id = crypto.randomUUID();
+
+
+		  if(discount) {
+			current_price = price - (price * discount) / 100
+			current_price = Math.round(current_price)
+		  }
 
 		  const product_details =
     JSON.parse(localStorage.getItem("product_details")) || [];
@@ -140,6 +159,7 @@
     size,
     price,
     discount,
+	current_price,
     description,
     unique_id,
   });

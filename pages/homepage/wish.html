@@ -67,6 +67,7 @@
 
 
     console.log(all_product);
+  
     
     for (let i = 0; i < all_product.length; i++) {
       div_card = document.createElement("section");
@@ -82,24 +83,28 @@
     
       h2 = document.createElement("h2");
       h2.setAttribute("id", "ak");
-      h2.innerHTML = all_product[i].name;
+    //   h2.innerHTML = all_product[i].;
       div_card1.append(h2);
-    
+
+      a=document.createElement("a");
+      a.setAttribute("href",`../products details/product.html?product_uniqueId=${all_product[i].unique_id}`);
+      h2.append(a);
+
       img = document.createElement("img");
       img.setAttribute("src", all_product[i].image1);
-      img.setAttribute("alt", all_product[i].image1);
       img.setAttribute("width", "150px");
       img.setAttribute("height", "150px");
-      div_card1.append(img);
+      a.append(img);
+      
     
       p1 = document.createElement("p");
-      p1.setAttribute("class", "shirt-type");
-      p1.innerHTML = all_product[i].description;
+      p1.setAttribute("id", "ak");
+      p1.innerHTML = all_product[i].name;
       div_card1.append(p1);
     
       p2 = document.createElement("p");
       p2.setAttribute("class", "shirt-rate");
-      p2.innerHTML = all_product[i].price;
+      p2.innerHTML = '₹'+ all_product[i].current_price;
       div_card1.append(p2);
     
       div_card2 = document.createElement("div");

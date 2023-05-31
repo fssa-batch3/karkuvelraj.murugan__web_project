@@ -28,17 +28,15 @@
                 <div class="price-container">
                     <div class="price-details">
                         <p class="price">Price Details</p>
-                        <p>
-                            Discount <span class="rate">300</span>
-                        </p>
+                 
                         <p class="gape">
-                            Price<span class="rate" id="total_price">1,200</span>
+                            Price<span class="rate" id="total_price"></span>
                         </p>
                         <p>
                             Delivery Charges<span class="rate">FREE</span>
                         </p>
                         <p class="total">
-                            Total Amount <span class="rate" id="total">900</span>
+                            Total Amount <span class="rate" id="total"></span>
                         </p>
                         <button class="order">Order Now</button>
                     </div>
@@ -57,9 +55,12 @@
 
     const check_pdt = cart_products.filter((e) => e.userid === user_id);
 
+    console.log(check_pdt)
     const all_product = all_products.filter((e) =>
   check_pdt.some((id) => e.unique_id === id.productid)
 );
+
+    let total_amt = 0;
 
     for (i = 0; i < all_product.length; i++) {
       // create the parent container
@@ -109,35 +110,35 @@
       // create the price element
       const price = document.createElement("p");
       price.classList.add("doller");
-      price.innerText = `₹${all_product[i].price}`;
+      price.innerText = `₹${all_product[i].current_price}`;
       c1.appendChild(price);
 
       // create the original price element
       const originalPrice = document.createElement("span");
       originalPrice.classList.add("del");
-      originalPrice.innerText = "₹300";
+      originalPrice.innerText = `₹${all_product[i].price}`;
       c1.appendChild(originalPrice);
 
-      // create the discount element
-    //   const discount = document.createElement("span");
-    //   discount.classList.add("discount");
-    //   discount.innerText = `${all_product[i].discount}discount`;
-    //   c1.appendChild(discount);
+    //   create the discount element
+      const discount = document.createElement("span");
+      discount.classList.add("discount");
+      discount.innerText = `${all_product[i].discount}discount`;
+      c1.appendChild(discount);
 
       // create the buy now button
-      const buy = document.createElement("button");
-      buy.classList.add("buy");
-      buy.innerText = "Move to wishlist";
-      c1.appendChild(buy);
+        const buy = document.createElement("button");
+        buy.classList.add("buy");
+        buy.innerText = "Qty";
+        c1.appendChild(buy);
 
-    //   const input = document.createElement("input");
-    //   input.setAttribute("type", "number");
-    //   input.setAttribute("id", "quantity");
-    //   input.setAttribute("value", all_product[i].product_quantity);
-    //   input.setAttribute("min", "1");
-    //   input.setAttribute("max", "8");
-    //   input.setAttribute("data-id", all_product[i].unique_id);
-    //   buy.appendChild(input);
+      const input = document.createElement("input");
+      input.setAttribute("type", "number");
+      input.setAttribute("class", "quantity");
+      input.setAttribute("value", check_pdt[i].product_quantity);
+      input.setAttribute("min", "1");
+      input.setAttribute("max", "8");
+      input.setAttribute("data-id", all_product[i].unique_id);
+      buy.appendChild(input);
 
       // create the close link
       const close = document.createElement("a");
@@ -154,6 +155,8 @@
 
       const cartcontainer = document.querySelector(".cart-container");
       cartcontainer.append(parent);
+
+      total_amt += all_product[i].current_price * check_pdt[i].product_quantity;
     }
 
     const remove_icon = document.querySelectorAll(".close");
@@ -172,40 +175,47 @@
       });
     });
 
-    let total_amt = 0;
-for (let l=0; l<all_product.length; l++){
-    total_amt += all_product[l].price * check_pdt[l].product_quantity;
-}
-console.log(total_amt);
+    console.log(total_amt);
+
 
 // quantity
 
-document.querySelectorAll("input").forEach((add) => {
-    add.addEventListener("change", (r) => {
+let prices = 0;
+
+document.querySelectorAll(".quantity").forEach((add) => {
+    add.addEventListener("change", function(r) {
         let product_id = r.currentTarget.dataset.id;
-        localStorage.setItem("product_id", JSON.stringify(product_id));
-        console.log(product_id);
-        const cart_pdt = JSON.parse(localStorage.getItem("cart"));
-        const pdts = all_product.find((e) => e.unique_id === product_id);
-        console.log(pdts);
-        let prices = pdts.price;
-        console.log(prices);
+
+        const pdts = cart_products.filter((e) => e.productid === product_id && e.userid === user_id);
+        console.log(pdts)
 
         const parent = r.currentTarget.closest(".cart-leftcol");
+    
+        const qty = parent.querySelector(".quantity").value;
+        console.log(qty)
 
-        const quantity = parent.querySelector("#quantity").value;
-        const cartPrice = prices * quantity;
-        console.log(cartPrice);
-        prices = cartPrice;
-        cart_pdt.product_quantity = quantity;
-        console.log(pdts.product_quantity);
-        localStorage.setItem("cart", JSON.stringify(cart_pdt));
-        window.localStorage.reload;
+        if(qty<=0 || qty >=8){
+            alert("This quantity is Invalid or not available")
+        }
+        else{
+        pdts[0].product_quantity = parseInt(qty)
+        console.log(pdts)
+        localStorage.setItem("cart", JSON.stringify(cart_products));
+
+        }
+        
+        window.location.reload()
+       
     })
 })
 
+console.log(prices)
+
+document.getElementById("total_price").innerText = total_amt
 document.getElementById("total").innerText = total_amt;
-document.getElementById("total_price").innerText = total_amt;
+
+
+
 
   </script>
     </body>

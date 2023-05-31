@@ -76,7 +76,7 @@
                     <div class="details">
                         <div class="first-name">
                             <label for=""> FIRST NAME</label>
-                            <input type="name" name="" id="user_name">
+                            <input type="name" name="" id="user_name" readonly>
                         </div>
                        
                         <div>
@@ -87,11 +87,11 @@
                                 class="tick"
                                 src="../../assets/images/Checkmark-green-tick-isolated-on-transparent-background-PNG.png"
                                 width="20px" alt="">
-                            <input type="tel" name="" id="tel" value="+91">
+                            <input type="tel" name="" id="tel" value="+91" readonly>
                         </div>
                         <div class="email">
                             <label for="">EMAIL</label>
-                            <input type="email" name="" id="email">
+                            <input type="email" name="" id="email" readonly>
                         </div>
                     </div>
                     <h4>2.DELIVERY METHOD</h4>
@@ -116,15 +116,15 @@
                     <div class="details-3">
                         <div>
                             <label for=""> CITY</label>
-                            <input type="select" name="" id="area">
+                            <input type="select" name="" id="area" readonly>
                         </div>
                         <div>
                             <label for="">ADDRESS</label>
-                            <input type="address" name="" id="address">
+                            <input type="address" name="" id="address" readonly>
                         </div>
                         <div>
                             <label for="">ZIP CODE</label>
-                            <input type="number" name="" id="pincode">
+                            <input type="number" name="" id="pincode" readonly>
                         </div>
                     </div>
                     <div class="payment">
@@ -144,9 +144,11 @@
                     </div>
 
                 </div>
+             
             </div>
+           
             <div class="right-col-container">
-                <div class="right-col-content">
+                <!-- <div class="right-col-content">
                     <h1>ORDER</h1>
                     <img src="../../assets/images/product shoe.webp" width="150px" alt="" srcset="">
                     <h3>Running Shoes For Men (Black, Yellow)</h3>
@@ -183,7 +185,7 @@
                         by confirming the order,i accept the <a href="">terms
                             of the users</a> agreement</p>
     
-                </div>
+                </div> -->
     
             </div>
         </section>
@@ -201,6 +203,73 @@
             document.getElementById("area").value = userData.user_district
             document.getElementById("pincode").value = userData.user_pincode
 
+
+
+            // const order_products = JSON.parse(localStorage.getItem("order"));
+
+            const all_products = JSON.parse(localStorage.getItem("product_details"));
+
+           const user_id = JSON.parse(localStorage.getItem("userId"));
+
+           const urlParams = new URLSearchParams(window.location.search);
+
+            const product_unique_id = urlParams.get("puid");
+
+            const order_products = all_products.find(e => e.unique_id === product_unique_id);
+
+//            const check_pdt = order_products.filter((e) => e.userid === user_id);
+
+// console.log(check_pdt)
+// const allorder_product = all_products.filter((e) =>
+// check_pdt.some((id) => e.unique_id === id.product_id)
+// );
+// console.log(allorder_product);
+
+// for (let i = 0; i<order_products.length; i++){
+const orders =
+            `<div class="right-col-content">
+                    <h1>ORDER</h1>
+                    <img src="${order_products.image1}" width="150px" alt="" srcset="">
+                    <h3>${order_products.name}</h3>
+                    <p class="size">
+                        SIZE <strong>${order_products.size}</strong>
+                    </p>
+                    <p class="color">
+                        COLOR <strong>${order_products.color}</strong>
+                    </p>
+                    <p>
+                        ₹${order_products.current_price}<s>₹${order_products.price}</s>
+                    </p>
+                    <div class="border"></div>
+                    <div class="product-details">
+                        <p>
+                            Sub Total<span class="rate"> ₹${order_products.current_price}</span>
+                        </p>
+                        <p>
+                            Discount <span class="rate">%${order_products.discount}</span>
+                        </p>
+                        <p>
+                            Shipping<span class="rate">FREE</span>
+                        </p>
+                    </div>
+                    <div class="border"></div>
+                    <p class="total">
+                        TOTAL<span class="rate">₹${order_products.current_price}</span>
+                    </p>
+                        <button class="btn-1">ORDER NOW</button>
+                    <p class="terms">
+                        <input type="checkbox" name="" id="">
+                        by confirming the order,i accept the <a href="">terms
+                            of the users</a> agreement</p>
+    
+                </div>`
+
+                document.querySelector(".right-col-container").insertAdjacentHTML("afterbegin", orders);
+
+                document.querySelector(".btn-1").addEventListener("click", () => {
+                    window.location.href = `../products details/new.html?puid=${product_unique_id}`
+                })
+            // }
         </script>
     </body>
 

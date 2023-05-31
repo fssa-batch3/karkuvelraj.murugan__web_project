@@ -78,15 +78,13 @@
                 </section>
                 <a href="../products details/productform.html"></a>
 
-                <script>const objadmin = [
+                <script>
+
+const objadmin = [
       {
         admin_name: "Akiraj",
           admin_password: "Aki141118",
-  },
-  {
-          admin_name: "Aki",
-          admin_password: "lovelyponda",
-      },
+  }
 ];
 function login() {
       console.log("raj");
@@ -94,19 +92,20 @@ function login() {
       const admin_name1 = document.getElementById("email").value;
       const admin_password1 = document.getElementById("password").value;
 
-  for (let i = 0; i < objadmin.length; i++) {
           if (
-            admin_name1 == objadmin[i].admin_name &&
-      admin_password1 == objadmin[i].admin_password
+            admin_name1 == objadmin[0].admin_name &&
+      admin_password1 == objadmin[0].admin_password
           ) {
-      alert("crt ");
-          window.location.href = "../products details/productform.html";
+            window.location.href = "../products details/productform.html";`
+            alert("crt")
+          
           } else {
             alert("your details incorrect");
         }
   }
-}
+
         </script>
+        <script src="../../assets/header.js"></script>
 
             </body>
 

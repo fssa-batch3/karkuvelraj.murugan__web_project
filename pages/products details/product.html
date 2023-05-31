@@ -9,20 +9,9 @@
         <link rel="stylesheet" href="../../assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-
-    <body>
-     
-                    <div class="sections">
-                        <ul>
-                        <a href="${logo_path}"><li>Home</li></a>
-                        <a href="${men}"><li>Men</li></a>
-                        <a href="${women}"><li>Women</li></a>
-                        <a href="${kids}"><li>Kids</li></a>
-                        </ul>
-                    </div>
-
-                    
-
+   
+    <body>          
+        
         <section class="product-details">
             <div class="product">
                 <div class="gold">
@@ -33,11 +22,11 @@
                 <div class="gape2"></div>
             </div>
             <div class="details">
-                <h1 id="category" style="font-size:40px"></h1>
+                <h3 id="category" ></h3>
                 <h3 id="prod-type"></h3>
-                <div class="rating">
+                <!-- <div class="rating">
                     <i class="fa fa-star" style="color:goldenrod"></i>
-                </div>
+                </div> -->
                 <span class="shoe-type"></span>
                 <h5></h5>
                 <div class="size-container">
@@ -54,6 +43,7 @@
                         <p id="size-XL"></p>
                     </span>
                 </div>
+                <h4 class="rate"></h4>
                 <p id="current" class="doller"></p>
                 <span id="original" class="del"></span>
                 <span id="offer"
@@ -65,7 +55,7 @@
                     <i class="fa fa-star"></i>
                 </div> -->
                 <strong>
-                    <p id="about_item"></p>
+                    <p id="about_item">About this product:</p>
                 </strong>
 
                 <p id="des_details"></p>
@@ -80,13 +70,44 @@
                 <button id="add_to_cart" class="cart"></button>
                 <i class="arrow">&#10148;
                 </i>
-                <a href="../checkout page/checout.html?puid=${product_unique_id}">
+                <!-- <a href=`../checkout page/checout.html?puid=${product_unique_id}`> -->
                     <button id="add_to_buy" class="order"></button>
-                </a>
+                <!-- </a> -->
             </div>
 
+
+
         </section>
-        <script>const urlParams = new URLSearchParams(window.location.search);
+        <footer class="footer_container">
+            <div class="f-1">
+               <h4>About</h4>
+               <h4>Policy</h4>
+               <h4>Terms</h4>
+               <p>Trusted by more than 1 Crore Indians <br>
+                Cash on Delivery | Free Delivery</p>
+            </div>
+            <div class="middle">
+                <img class="footer_logo" src="../../assets/images/logo-transparent-png.png" alt="" width="90px">                    
+              <h4>Be sure to take a look at <br> our terms of Use and Privacy Policy</h4>
+            </div>
+            <div class="f-2">
+              <h4>Contact</h4>
+
+              <i class="fa fa-envelope"> <label for="">karkuvelraj60@gmail.com</label> </i> <br> 
+              <i class="fa fa-phone"></i>+91 9092381410<br>
+              <i class="fa fa-facebook-f"></i>
+              <i class="fa fa-youtube-play"></i>
+              <i class="fa fa-twitter"></i>
+              <i class="fa fa-instagram"></i>
+            </div>
+               
+        </footer>
+     
+      
+        <script>
+
+        
+    const urlParams = new URLSearchParams(window.location.search);
 
     const product_unique_id = urlParams.get("product_uniqueId");
 
@@ -126,11 +147,13 @@
     img4.setAttribute("height", "80px");
     document.querySelector("div.gape2").append(img4);
 
-    category = document.querySelector("h1#category");
+    category = document.querySelector("h3#category");
     category.innerText = unique_product[0].name;
 
     category = document.querySelector("h3#prod-type");
     category.innerText = unique_product[0].type;
+
+  
 
     category = document.querySelector("h5");
     category.innerText = "Choose Size:";
@@ -147,14 +170,17 @@
     category = document.querySelector("p#size-XL");
     category.innerText = "XL";
 
+    category = document.querySelector("h4");
+    category.innerText = "price:";
+
     category = document.querySelector("p#current");
-    category.innerText = "389";
+    category.innerText =unique_product[0].current_price;
 
     category = document.querySelector("span#original");
     category.innerText = unique_product[0].price;
 
     category = document.querySelector("span#offer");
-    category.innerText = unique_product[0].discount;
+    category.innerText = (unique_product[0].discount+'%');
 
     category = document.querySelector("p#des_details");
     category.innerText = unique_product[0].description;
@@ -164,6 +190,7 @@
     category.innerText = "Add To Cart";
 
     category = document.querySelector("button#add_to_buy");
+    category.setAttribute("data-id", unique_product[0].unique_id);
     category.innerText = "Buy now";
 
     // ADD TO CART
@@ -214,62 +241,56 @@ cart.addEventListener("click", function () {
         }
   }
 });
+        //  MY ORDER PAGE  // 
 
-function big(img){
-    document.querySelector('.gold').src=img;
-}
+        const buy =document.querySelector("#add_to_buy");
 
-//   let cart = document.querySelector("#add_to_cart");
+      buy.addEventListener("click" , function(){
+        const product_id =this.dataset.id;
 
-//   cart.addEventListener("click", function () {
-//     let product_id = this.dataset.id;
+        // console.log(product_id)
+        localStorage.setItem("order_id",JSON.stringify(product_id));
+    //  console.log(product_id);
+         
 
-//     localStorage.setItem("product_id", JSON.stringify(product_id))
-//     // console.log(product_id)
-//     let uid = JSON.parse(localStorage.getItem("userId"));
-//     // console.log(uid);
-//     let userlist = JSON.parse(localStorage.getItem("user_list"));
-//     // console.log(userlist);
+     const user_id = JSON.parse(localStorage.getItem("userId"));
+  const user_lists = JSON.parse(localStorage.getItem("user_list"));
 
-//   let users = userlist.length &&
-//               JSON.parse(localStorage.getItem("user_list")).some(data => data.user_email === uid );
-//   console.log(users)
+  const users =
+  user_lists.length &&
+        JSON.parse(localStorage.getItem("user_list")).some(
+          (data) => data.user_email === user_id
+    );
+     console.log(users)
 
-//   if (!users) {
-//     alert("you are not logedin");
-//   } else {
-//       let product_id = JSON.parse(localStorage.getItem("product_id"))
-//     console.log(product_id)
+     if (!users) {
+        alert("you are not logged in");
+  } else {
+        const order_id = JSON.parse(localStorage.getItem("order_id"));
+        const product_list = JSON.parse(localStorage.getItem("product_details"));
+        const products = product_list.find((e) => e.unique_id === order_id);
+        const ordered_products = JSON.parse(localStorage.getItem("ordered-product")) || [];
+
+        const already_ordered =
+        ordered_products.length &&
+          JSON.parse(localStorage.getItem("order_id")).some(
+            (data) => data.product_id === order_id && data.userid === user_id
+      );
+
+        if (already_ordered) {
+          alert("This product has already been Oredered.");
+        } else {
+          alert("This product has been Going to checkout page.");
+          window.location.href = `../checkout page/checout.html?puid=${product_unique_id}`;
+        }
+  }
+      });
     
-//     let product_list = JSON.parse(localStorage.getItem("product_details"));
 
-//     let products = product_list.find(e => e.unique_id === product_id)
 
-//     // console.log(products)
-//     let cart_products = JSON.parse(localStorage.getItem("cart")) || [];
-//     // console.log(cart_products)
-
-//     let already_cart =
-//     cart_products.length && JSON.parse(localStorage.getItem("cart")).some
-//     (data => data.productid === product_id && data.userid === uid)
-//     console.log(already_cart)
-
-//     if (already_cart) {
-//       alert("This product has already been added");
-//     }
-//     else {
-//       alert("This product is added to your cart");
-//       cart_products.push({
-//         productid: products["unique_id"],
-//         userid: uid
-//       })
-//       localStorage.setItem("cart", JSON.stringify(cart_products));
-//       window.location.href = "../homepage/cart.html";
-//     }
-//   }
-// })
+  
   </script>
-
+<script src="../../assets/header.js"></script>  
     </body>
 
 </html>

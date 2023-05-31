@@ -17,6 +17,9 @@
     --color-dark:#1D2231;
     --text-grey:black;
 }
+#save{
+    display: none;
+}
 .side-item{
     display: flex;
    flex-direction: column;
