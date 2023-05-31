@@ -1,96 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-up page</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign-up page</title>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
 
-<body>
-
-
-  <div class="nav-container">
-    <div class="nav-links">
-      <ul>
-        <li><a href="../../index.html">Home</a></li>
-
-        <div class="dropdown">
-          <li><a href="../products/men.html">Men</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">SHIRT</a>
-            <a href="#">T-SHIRT</a>
-            <a href="#">PANT</a>
-
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../products/women.html">Women</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">Suti</a>
-            <a href="#">Tops</a>
-            <a href="#">Saree's</a>
-            <a href="#">Night Dress</a>
-
-          </div>
-        </div>
-        <div class="dropdown">
-          <li><a href="../products/kid.html">Kids</a> </li>
-
-          <div class="dropdown-content">
-            <a href="#">Dress</a>
-            <a href="#">Toys</a>
-            <a href="#">Modern dresses</a>
-          </div>
-        </div>
-
-        <li><a href="../homepage/about.html">About Us</a> </li>
-        <li> <a href="../homepage/contact.html">Contact</a></li>
-      </ul>
-
-    </div>
-
-  </div>
-  <section class="signup-container">
-    <div class="signup-content">
-      <h1>SIGNUP</h1>
-      <p class="signup-para">Get access to your <br> orders wishlist and <br> recomandations</p>
-      <img src="../../assets/images/signup.png" class="signup-image" width="190px" alt="">
-    </div>
-    <div class="signup-form">
-      <h2>Registration</h2>
-      <form class="form-control" role="form" onsubmit="signUp(event)">
-        <div class="inputs">
-          <input required="true"  type="mail" id="name"
-            placeholder="name">
-          <input   type="mail" id="number"
-            placeholder="phone-number">
-          <input required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="mail" id="email"
-            placeholder="email">
-          <input required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="password"
-            placeholder="Create password">
-          <input required="true" type="password" id="confirm_password" placeholder="Confirm_Password">
-        </div>
-        <div class="otp">
-
-            <p><button class="btn1"  type="submit">sign-up</button> </p>
+    <body>
 
 
-          </div>
+        <div class="sections">
+            <ul>
+            
+            <a href="../../index.html"><li>Home</li></a>
+            <a href="../product categories/men.html"><li>Men</li></a>
+            <a href="../product categories/women.html"><li>Women</li></a>
+            <a href="../product categories/kids.html"><li>Kids</li></a>
+            </ul>
+            </div> 
+        <section class="signup-container">
+            <div class="signup-content">
+                <h1>SIGNUP</h1>
+                <p class="signup-para">
+                    Get access to your <br>
+                    orders wishlist and <br> recomandations
+                </p>
+                <img src="../../assets/images/signup.png" class="signup-image" width="190px" alt="">
+            </div>
+            <div class="signup-form">
+                <h2>Registration</h2>
+                <form class="form-control" role="form" onsubmit="signUp(event)">
+                    <div class="inputs">
+                        <input required="true" type="mail" id="name"
+                            placeholder="name" >
+                        <input type="mail" id="number"
+                            placeholder="phone-number" >
+                        <input required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="mail" id="email"
+                            placeholder="email" >
+                        <input required="true" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" id="password"
+                            placeholder="Create password" >
+                        <input required="true" type="password" id="confirm_password" placeholder="Confirm_Password" >
+                    </div>
+                    <div class="otp">
 
+                        <p>
+                            <button class="btn1" type="submit">sign-up</button> 
+                        </p>
+                       
+
+                    </div>
         
         </div>
     </div>
-    </form>
-
+                </form>
 
   </section>
 
-<script src="./usercrud.js"></script>
+                <script src="./usercrud.js"></script>
 
 </body>
 

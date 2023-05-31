@@ -1,91 +1,140 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Profile page </title>
-    <link rel="stylesheet" href="../../assets/css/profile.css" />
+    <title>Profile</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="">
+    <!-- <link rel="stylesheet" href="../../assets/css/style.css"> -->
+    <link rel="stylesheet" href="../../assets/css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Kreon:wght@300;400;500;600;700&family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-
 <body>
-    <header> 
-        <a href="../../index.html"> <img class="logo" src="../../assets/images/logo.png" alt="logo"
-                height="70px" width="70px" /> </a>
-        <h1> AAHA </h1>
-        <div class="nav">
-            <ul>
-                <li> <a href="./editproduct.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
-                <li> <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a></li>
-                <li><a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-bell"></i></i></a></li>
-                <li><a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a></li>
-                <!-- <li> <a href="../homepage/loginpage.html"><span class="login"> Login </span> </a></li> -->
-            </ul>
-        </div>
-        <!-- <div class="menu">
-               <i class="fa-solid fa-bars"></i>
-                <div class="menu-list">
-                       <a href="../orders/cartpage.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-                       <a href="../orders/wishlistpage.html"><i class="fa-sharp fa-solid fa-heart"></i></a>
-                       <a href="../orders/myorderspage.html"><i class="fa-solid fa-bag-shopping"></i></a>
-                       <a href="#"><i class="fa-solid fa-bell"></i></i></a>
-                       <a href="profilepage.html"><i class="fa-solid fa-circle-user"></i></a>
-                       <a href="loginpage.html"><span class="login"> Login </span> </a>
+
+    <div class="sections1">
+        <ul>
+        
+        <a href="../../index.html"><li>Home</li></a>
+        <a href="../product categories/men.html"><li>Men</li></a>
+        <a href="../product categories/women.html"><li>Women</li></a>
+        <a href="../product categories/kids.html"><li>Kids</li></a>
+        </ul>
+        </div> 
+    <!-- This is profile-section -->
+    <div class="account-section">
+        <div class="side-item">
+            <div class="page">
+                <img  id="profile" alt="error">
+                <div>
+                    <h4 id="customer">name</h4>
                 </div>
-            </div> -->
-    </header>
-    <section>
-        <h1> PROFILE</h1>
-        <form role="form" onsubmit="eprofile_details(event)">
-
-            <div class="name">
-                <label> Name: </label>
-                <input type="name" required="true" id="user_name" readonly />
             </div>
-
+            <div class="side-menu">
+                <ul>
+                    <li>
+                        <a href="../homepage/profile.html" id="my_profile" class="active" autofocus>
+<span class="fa-solid fa-circle-user"></span>
+                            <span>My Profile</span>
+</a>
+                    </li>
+                    <li>
+                        <a href="../homepage/cart.html" id="my_events" class="active">
+<span class="fa-solid fa-bag-shopping"></span>
+                            <span>Cart</span>
+</a>
+                    </li>
+                    <li>
+                        <a href="../homepage/wish.html" id="my_session" class="active">
+<span class="fa-solid fa-calendar-check"></span>
+                            <span>Wishlist</span>
+</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">
+<span class="fa-solid fa-circle-user"></span>
+                            <span>My Order</span>
+</a>
+                    </li>
+                   
+                </ul>
             </div>
-            <div class="add">
-                <label> Residential address: </label>
-                <textarea id="address" readonly required="true">  </textarea>
-            </div>
-            <div class="no">
-                <label> Contact number: </label>
-                <input type="number" required="true" placeholder="+91" id="user_number" readonly >
-            </div>
-            <div class="mail" >
-                <label> E-Mail Id:</label>
-                <input type="email" required="true" id="user_email" disabled>
-            </div>
-            <!-- <div class="des">
-                        <label> Your Designation:</label>
-                        <div class="buyer">
-                        <label> Buyer </label> <input type="radio" name="Buyer_Seller_Both" />
-                        <label> Seller </label> <input type="radio" name="Buyer_Seller_Both" />
-                        <label> Both </label> <input type="radio" name="Buyer_Seller_Both" />
+        </div>
+        <div class="main-item">
+            <!-- This is header section -->
+            <!-- This is profile update section-->
+            <div class="user-condainer">
+                <div class="information boxes">
+                <form  role="form" onsubmit="eprofile_details(event)" >
+                    <div class="first-name" id="align-num">
+                        <label class="more"> First Name</label>
+                        <input class="name" id="user_name" type="text" pattern="[A-Za-z]{1,32}" name="user name"
+                            placeholder="First Name" value="" readonly>
                     </div>
-                </div> -->
-            <!-- <div class="btn"> -->
-                <button class="btn-1" type="submit" id = "edit_button"> Edit </button>
-
-                <button class="btn-1" type="submit" id = "save"> Save </button>
-                <button class="btn-1" type="submit" id = "delete"> Delete </button>
-
-                <!-- <button class="btn-2" type="submit" onclick="submit()"> <a href="../homepage/sellerpage.html"> Cancel </a> </button> -->
+                    <!-- This is Last name  -->
+                    <div class="last-name" id="align-num">
+                        <label class="more"> Address</label>
+                        <input class="name" id="address" type="text" name="user name"
+                            placeholder="Last Name" value="" title="Last name connot contain spaces" readonly>
+                    </div>
+                    <!-- This is email input  -->
+                    <div class="email" id="align-num">
+                        <label class="more"> Email</label>
+                        <input class="name_email" id="user_email" type="email" name="user email" placeholder="name@gmail.com"
+                            value="" required="true" disabled>
+                    </div>
+                    <!-- This is city -->
+                    <div class="fCity-name" id="align-num">
+                        <label class="more"> City</label>
+                        <select name="city" class="name" id="district">
+                            <option value="Tenkasi">Tenkasi</option>
+                            <option value="Pvoorchatram">Pvoorchatram</option>
+                            <option value="Surandai">Surandai</option>
+                            <option value="Madurai">Kdaiyam</option>
+                            <option value="Ambai">Ambai</option>
+                            <option value="Alangulam">Alangulam</option>
+                            <option value="Nellai">Nellai</option>
+                            <option value="Poolangulam">Poolangulam</option>
+                        </select>
+                        <!-- <input class="name" id="user-firstname" type="text" pattern="[A-Za-z]{1,32}" name="user name"
+                            title="First name connot contain spaces" placeholder="First Name" value="" required="true"> -->
+                    </div>
+                    <!-- This is number -->
+                    <div class="Number" id="align-num">
+                        <label id="" class="more"> mobile number</label>
+                        <input class="name" id="user_number" type="tel" pattern="[0-9]{10,12}"
+                            name="number" placeholder="mobile number" maxlength="10">
+                    </div>
+                    <!-- This is Address input  -->
+                    <div class="pincode" id="align-num">
+                        <label class="more"> Pincode</label>
+                        <input class="name" id="pincode" type="text" pattern="[0-9]{6,6}"
+                           maxlength="6" name="user address" placeholder="Pincode">
+                    </div>
+                    <div class ="edit_btns">
+                        <button id="edit_button" onclick="myfunc()">Edit</button>
+                        <button id="save" type="submit">Save</button>
+                        <button id="delete">Delete</button>
+                    </div>
+                </form>
+                </div>
+                        </div>
+                </div>
             </div>
-        </form>
-    </section>
-        <script src="./usercrud.js"></script>   
+        </div>
+    </div>
+    
+<script src="./usercrud.js"></script>
+<script>
+    function myfunc(){
+        document.getElementById("save").style.display="inline-block";
+        document.getElementById("edit_button").style.display="none";
+    }
+</script>
 </body>
-
 </html>

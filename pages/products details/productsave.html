@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productsave</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Productsave</title>
+        <style>
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f2f2f2;
@@ -86,112 +86,101 @@
 			left: 100px;
 		}
 	</style>
-</head>
-<body>
-    <section class="admin-container">
-		<form class="product-form" role="form"  id="form">
-			<div>
-				<h1>Create product</h1>
+    </head>
+    <body>
+        <section class="admin-container">
+            <form class="product-form" role="form" id="form">
+                <div>
+                    <h1>Create product</h1>
 
-				<label for="name">Product Name:</label>
-				<input type="text" id="product_name" name="name" required>
-				<label for="name">Category:</label>
-				<input type="text" id="Category" name="name" required>
-				<label for="url">Image1:</label>
-				<input type="url" id="main-image" name="name" required>
-				<label for="name">Image2</label>
-				<input type="url" id="sub-img1" name="name" required>
-				<label for="name">Image3:</label>
-				<input type="url" id="sub-img2" name="name" required>
-			</div>
-			<div>
-				<label for="name">Image4:</label>
-				<input type="url" id="sub-img3" name="name" required>
-				<label for="name">Size:</label>
-				<input type="text" id="product_size" name="name" required>
-				<label for="number">ProductPrice:</label>
-				<input type="number" id="product_price" name="number" required>
-				<label for="name">Discount:</label>
-				<input type="text" id="product_discount" name="name" required>
-				<label for="name">Description:</label>
-				<textarea type="text" class="area" id="product_desciption" name="name" required></textarea>
-				<button class="submit" type="submit">SAVE</button>
+                    <label for="name">Product Name:</label>
+                    <input type="text" id="product_name" name="name" required>
+                    <label for="name">Category:</label>
+                    <input type="text" id="Category" name="name" required>
+                    <label for="url">Image1:</label>
+                    <input type="url" id="main-image" name="name" required>
+                    <label for="name">Image2</label>
+                    <input type="url" id="sub-img1" name="name" required>
+                    <label for="name">Image3:</label>
+                    <input type="url" id="sub-img2" name="name" required>
+                </div>
+                <div>
+                    <label for="name">Image4:</label>
+                    <input type="url" id="sub-img3" name="name" required>
+                    <label for="name">Size:</label>
+                    <input type="text" id="product_size" name="name" required>
+                    <label for="number">ProductPrice:</label>
+                    <input type="number" id="product_price" name="number" required>
+                    <label for="name">Discount:</label>
+                    <input type="text" id="product_discount" name="name" required>
+                    <label for="name">Description:</label>
+                    <textarea type="text" class="area" id="product_desciption" name="name" required></textarea>
+                    <button class="submit" type="submit">SAVE</button>
 
-			</div>
-		</form>
+                </div>
+            </form>
 
-	</section>
+        </section>
 
+        <script>
+        const uuid = JSON.parse(localStorage.getItem("uniqueId"));
+        console.log(uuid);
+        const add_product = JSON.parse(localStorage.getItem("product_details"));
+        function find_data(e) {
+          return e.unique_id == uuid;
+        }
+        product_data = add_product.find(find_data);
+        console.log(product_data);
+        document.getElementById("product_name").value = product_data.name;
+        document.getElementById("Category").value = product_data.type;
+        document.getElementById("main-image").value = product_data.image1;
+        document.getElementById("sub-img1").value = product_data.image2;
+        document.getElementById("sub-img2").value = product_data.image3;
+        document.getElementById("sub-img3").value = product_data.image4;
+        document.getElementById("product_size").value = product_data.size;
+        document.getElementById("product_price").value = product_data.price;
+        document.getElementById("product_discount").value = product_data.discount;
+        document.getElementById("product_desciption").innerText =
+  product_data.description;
 
-    <script>
-        let uuid = JSON.parse(localStorage.getItem("uniqueId"));
-            console.log(uuid);
-            let add_product = JSON.parse(localStorage.getItem("product_details"));
-            function find_data(e) {
+const updates = document.querySelector("form#form");
+        updates.addEventListener("submit", update_product);
+        function update_product() {
+          event.preventDefault();
+          const uuid = JSON.parse(localStorage.getItem("uniqueId"));
+          const add_product = JSON.parse(localStorage.getItem("product_details"));
+          function find_data(e) {
             return e.unique_id == uuid;
-            }
-            product_data = add_product.find(find_data);
-            console.log(product_data);
-            document.getElementById("product_name").value = product_data["name"];
-            document.getElementById("Category").value = product_data["type"];
-            document.getElementById("main-image").value = product_data["image1"];
-            document.getElementById("sub-img1").value = product_data["image2"];
-            document.getElementById("sub-img2").value = product_data["image3"];
-            document.getElementById("sub-img3").value = product_data["image4"];
-            document.getElementById("product_size").value = product_data["size"];
-            document.getElementById("product_price").value = product_data["price"];
-            document.getElementById("product_discount").value = product_data["discount"];
-            document.getElementById("product_desciption").innerText = product_data["description"];
+          }
+          product_data = add_product.find(find_data);
+          console.log(product_data);
+          const name = document.getElementById("product_name").value;
+          const category = document.getElementById("Category").value;
+          const image1 = document.getElementById("main-image").value;
+          const image2 = document.getElementById("sub-img1").value;
+          const image3 = document.getElementById("sub-img2").value;
+          const image4 = document.getElementById("sub-img3").value;
+          const size = document.getElementById("product_size").value;
+          const price = document.getElementById("product_price").value;
+          const discount = document.getElementById("product_discount").value;
+          const descrip = document.getElementById("product_desciption").value;
+        
+          product_data.name = name;
+          product_data.type = category;
+          product_data.image1 = image1;
+          product_data.image2 = image2;
+          product_data.image3 = image3;
+          product_data.image4 = image4;
+          product_data.size = size;
+          product_data.price = price;
+          product_data.discount = discount;
+          product_data.description = descrip;
 
-
-
-            let updates = document.querySelector("form#form");
-            updates.addEventListener("submit", update_product);
-            function update_product() {
-                event.preventDefault();
-                let uuid = JSON.parse(localStorage.getItem("uniqueId"));
-                let add_product = JSON.parse(localStorage.getItem("product_details"));
-                function find_data(e) {
-                    return e.unique_id == uuid;
-                }
-                product_data = add_product.find(find_data);
-                console.log(product_data)
-                let name = document.getElementById("product_name").value
-                let category= document.getElementById("Category").value
-                let image1 = document.getElementById("main-image").value
-                let image2 = document.getElementById("sub-img1").value
-                let image3 = document.getElementById("sub-img2").value
-                let image4 = document.getElementById("sub-img3").value
-                let size = document.getElementById("product_size").value
-                let price = document.getElementById("product_price").value
-                let discount =document.getElementById("product_discount").value
-                let descrip = document.getElementById("product_desciption").value
-            // if (discount_percent == discount_percent) {
-            //     discount_price = original_price - original_price * discount_percent / 100 ;
-            //     discount_price = Math.round(discount_price);
-            // }
-            // else {
-            //     discount_price = original_price - discount_percent;
-            // }
-            product_data["name"] = name;
-            product_data["type"] = category;
-            product_data["image1"] = image1;
-            product_data["image2"] = image2;
-            product_data["image3"] = image3;
-            product_data["image4"] = image4;
-            product_data["size"] = size;
-            product_data["price"] = price;
-            product_data["discount"] = discount;
-            product_data["description"] = descrip;
-
-
-
-
-                localStorage.setItem('product_details', JSON.stringify(add_product));
-                alert("Product updated successfully");
-                location.href = "../products details/product_edit_form.html";
-            }
+          localStorage.setItem("product_details", JSON.stringify(add_product));
+          alert("Product updated successfully");
+          location.href = "../products details/product_edit_form.html";
+        }
        </script>
     </script>
-</body>
+    </body>
 </html>

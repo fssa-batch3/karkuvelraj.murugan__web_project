@@ -1,125 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <!DOCTYPE html>
-    <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../assets/css/style.css">
         <title>Document</title>
     </head>
 
     <body>
+    <!DOCTYPE html>
+        <html lang="en">
 
-        <!-- <div class="nav-container">
-            <div class="nav-links">
-                <ul>
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../../assets/css/style.css">
+                <title>Document</title>
+            </head>
+
+            <body>
+
+                <!-- <div class="nav-container">
+                    <div class="nav-links">
+                    <ul>
                     <li><a href="../../index.html">Home</a></li>
 
                     <div class="dropdown">
-                        <li><a href="../products/men.html">Men</a> </li>
+                    <li><a href="../products/men.html">Men</a> </li>
 
-                        <div class="dropdown-content">
-                            <a href="#">SHIRT</a>
-                            <a href="#">T-SHIRT</a>
-                            <a href="#">PANT</a>
+                    <div class="dropdown-content">
+                    <a href="#">SHIRT</a>
+                    <a href="#">T-SHIRT</a>
+                    <a href="#">PANT</a>
 
-                        </div>
+                    </div>
                     </div>
                     <div class="dropdown">
-                        <li><a href="../products/women.html">Women</a> </li>
+                    <li><a href="../products/women.html">Women</a> </li>
 
-                        <div class="dropdown-content">
-                            <a href="#">Suti</a>
-                            <a href="#">Tops</a>
-                            <a href="#">Saree's</a>
-                            <a href="#">Night Dress</a>
+                    <div class="dropdown-content">
+                    <a href="#">Suti</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Saree's</a>
+                    <a href="#">Night Dress</a>
 
-                        </div>
+                    </div>
                     </div>
                     <div class="dropdown">
-                        <li><a href="../products/kid.html">Kids</a> </li>
+                    <li><a href="../products/kid.html">Kids</a> </li>
 
-                        <div class="dropdown-content">
-                            <a href="#">Dress</a>
-                            <a href="#">Toys</a>
-                            <a href="#">Modern dresses</a>
-                        </div>
+                    <div class="dropdown-content">
+                    <a href="#">Dress</a>
+                    <a href="#">Toys</a>
+                    <a href="#">Modern dresses</a>
+                    </div>
                     </div>
 
                     <li><a href="../homepage/about.html">About Us</a> </li>
                     <li> <a href="../homepage/contact.html">Contact</a></li>
-                </ul>
+                    </ul>
 
-            </div>
+                    </div>
 
-        </div> -->
+                    </div> -->
 
-        <section class="login-content">
-            <div class="login-page">
-                <h1 class="site-name">ADMIN</h1>
-                <form role="form">
-                    <input id="email" class="mail" type="name" placeholder="Email address">
-                    <input id="password" class="password" type="password" placeholder="Password">
-                    <button onclick="login()" type="submit" class="login">LOG IN</button>
-                </form>
-            </div>
-        </section>
-        <a href="../products details/productform.html"></a>
+                <section class="login-content">
+                    <div class="login-page">
+                        <h1 class="site-name">ADMIN</h1>
+                        <form role="form">
+                            <input id="email" class="mail" type="name" placeholder="Email address">
+                            <input id="password" class="password" type="password" placeholder="Password">
+                            <button onclick="login()" type="submit" class="login">LOG IN</button>
+                        </form>
+                    </div>
+                </section>
+                <a href="../products details/productform.html"></a>
 
+                <script>
 
+const objadmin = [
+      {
+        admin_name: "Akiraj",
+          admin_password: "Aki141118",
+  }
+];
+function login() {
+      console.log("raj");
 
-        <script>
+      const admin_name1 = document.getElementById("email").value;
+      const admin_password1 = document.getElementById("password").value;
 
-            let objadmin = [
-                {
-                    admin_name: "Akiraj",
-                    admin_password: "Aki141118"
-
-                },{
-                    admin_name: "Aki",
-                    admin_password: "lovelyponda"
-
-                }
-            ]
-            function login() {
-
-               console.log("raj")
-
-
-                let admin_name1 = document.getElementById("email").value
-                let admin_password1 = document.getElementById("password").value
-
-
-
-            
-            for (let i = 0; i<objadmin.length; i++) {
-                if ( admin_name1 == objadmin[i].admin_name &&  admin_password1 ==objadmin[i].admin_password) {
-                    alert("crt ")
-                    window.location.href = "../products details/productform.html"
-                
-                }else{
-                    
-                    alert("your details incorrect")
-                }
-            }
+          if (
+            admin_name1 == objadmin[0].admin_name &&
+      admin_password1 == objadmin[0].admin_password
+          ) {
+            window.location.href = "../products details/productform.html";`
+            alert("crt")
+          
+          } else {
+            alert("your details incorrect");
         }
+  }
+
         </script>
+        <script src="../../assets/header.js"></script>
 
+            </body>
+
+        </html>
     </body>
-
-    </html>
-</body>
 
 </html>
