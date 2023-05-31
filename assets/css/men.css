@@ -31,18 +31,23 @@
     position: relative;
     left: 121px;
     z-index: 1;
+    left: 117px;
+    font-size: 25px;
 }
 
 .like{
-    width: 40px ;
-    height: 40px;
+    width: 90px ;
+    height: 36px;
     border: 1px solid rgb(176, 174, 174);
+    margin-left: 17px;
     border-radius: 20px;
-    position: relative;
-    top: 10px;
-    left: 84px;
+    font-weight: bold;
     display: inline-block;
     background-color: white;
+}
+.like:hover{
+    background-color: black;
+    color: goldenrod;
 }
 /* -------------------nav bar---------------------- */
 .nav-container {
@@ -134,11 +139,11 @@ ul li {
 
 }
 /* card details */
-.card-details p{
+/* .card-details p{
     max-width: 220px;
     position: relative;
     left: 20px;
-}
+} */
 .shop {
     width: 140px;
     height: 30px;
@@ -167,11 +172,10 @@ ul li {
     padding-left: 20px;
 }
   .product-name{
-    background-color: goldenrod;
     color: black;
-    height: 50px;
     position: relative;
-    top: 15px;
+    top: 30px;
+  
   }
 .border-1 {
     width: 300px;
@@ -182,12 +186,22 @@ ul li {
     bottom: 10px;
 }
 
-.product-container {
-    flex-basis: 1100px;
+/* .product-container { */
+    /* flex-basis: 1100px;
     box-shadow: 5px 5px 10px rgb(192, 191, 191);
     margin-top: 30px;
     margin-left: 30px;
     /* margin-left: 290px; */
+/* }  */
+section.product-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 1000px;
+    flex-direction: row;
+    /* align-content: space-around;
+    justify-content: space-around; */
+    align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 input[type=search] {
@@ -217,11 +231,13 @@ input[type=search] {
     background-size: cover;
     overflow: hidden;
     position: relative;
+    margin-left: 50px;
+    margin-top: 50px;
 }
 
 .card-details {
     position: absolute;
-    bottom: -450px;
+    bottom: 390px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -236,29 +252,36 @@ input[type=search] {
     font-weight: bold;
 
 }
-.card-details h1{
-    position: relative;
-    top: 40px;
+body > section > section > div > div.card-details > h1{
+margin-top: 60px;
 }
 .card-details p{
     position: relative;
-    top: 40px;
+    top: 80px;
+     max-width: 220px;
+     left: 18px;
 }
-.card-details h2{
+.card-details h1{
     position: relative;
-    top: 40px;
+    top: 50px;
 }
- .card-title {
+ /* .card-title {
     position: absolute;
     left: 0;
     text-align: center;
-    bottom: 0;
+    bottom: 100;
     width: 100%;
     height: 18%;
     transition: 0.3s ease-in-out;
-    background: transparent;
     color: white;
-}
+ }
+     .product-name {
+    background-color: goldenrod;
+    color: black;
+    height: 30px;
+    /* position: relative; */
+    /* top: 85px; */
+/* }  */
 
 .card:hover .card-title {
     bottom: -75px;
@@ -284,16 +307,7 @@ input[type=search] {
     border: 1px solid white;
     font-weight: bold;
 }
-.cart{
-    position: relative;
-    left: 140px;
-    width: 85px;
-    height: 35px;
-    border-radius: 20px;
-    border: 1px solid white;
-    font-weight: bold;
 
-}
 .buy:hover{
     background-color: black;
     color: goldenrod;
@@ -329,4 +343,9 @@ img {
     display: flex;
     justify-content: space-evenly;
 
+}
+.btn_like{
+    /* visibility: hidden; */
+    width: 50px;
+    height: 50px;
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/new.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/style.css"> -->
+    <title>Card</title>
+</head>
+<body>
+
+
+    <div class="address_heading">
+        <h3>Delivery Address <a href="../products details/addressform.html"><button>CHANGE ADDRESS</button></a></h3> 
+    </div>
+    <section class="order_container">
+        <div class="add">
+            <div class="address_container">
+                <div class="address_content">
+                 <h2 id = "name"> </h2>
+                 <p id = "address"> </p>
+                 <p id = "district"> <span id = "pincode"> </span> </p> 
+                 <p id = "number"> </p>
+                 <button class="order">Delivery Here</button>
+                </div>
+             
+             </div>
+           
+     
+        </div>
+     
+     
+        
+        <div class="cart-rightcol">
+            <div class="price-container">
+                <div class="price-details">
+                    <p class="price">Price Details</p>
+                    <p class="gape">
+                        Price<span class="rate" id="total_price"></span>
+                    </p>
+                    <p>
+                        Delivery Charges<span class="rate">FREE</span>
+                    </p>
+                    <p class="total">
+                        Total Amount <span class="rate" id="total"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script>
+
+        const userId = JSON.parse(localStorage.getItem("userId"));
+        const userDetails = JSON.parse(localStorage.getItem("user_list"));
+
+        const currentUser = userDetails.find(e => e.user_email === userId);
+
+        document.getElementById("name").innerText = currentUser.user_name;
+        document.getElementById("address").innerText = currentUser.user_address; 
+        document.getElementById("district").innerText =  currentUser.user_district + ", " + currentUser.user_pincode;
+        document.getElementById("number").innerText =  currentUser.user_number
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+            const product_unique_id = urlParams.get("puid");
+            const all_products = JSON.parse(localStorage.getItem("product_details"));
+
+            const order_products = all_products.find(e => e.unique_id === product_unique_id);        
+
+            document.getElementById("total_price").innerText = order_products.current_price;
+            document.getElementById("total").innerText = order_products.current_price;
+
+
+
+    </script>
+    <script src="../products details/address.js"></script>
+   <!-- <script src="../../assets/header.js"></script> -->
+
+
+
+   
+</body>
+</html>
+
+<!-- const address = ` <div class="address_content">
+    //             <h2>M.Karkuvel</h2> 
+    //             <p>7/256,Avudaiyanoor,Tenkasi.</p>
+    //             <p>Pavoorchatram <span>627808</span></p>
+    //             <p>9092381410</p>
+    //         </div>` -->

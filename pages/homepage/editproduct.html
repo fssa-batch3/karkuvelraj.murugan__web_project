@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+    </head>
+    <body>
+
+        <header class="navbar">
+            <div class="nav-items">
+                <img class="logo" src="./assets/images/logo1.png" width="130px" alt="logo">
+                <input class="searchbox" type="text" placeholder="Search items" name="search" width="500px">
+                <span class="search">
+                    <i class="fa fa-search" style="font-size:24px"></i>
+    
+                </span>
+    
+            </div>
+    
+            <div class="icon">
+                <a class="c1" href="./pages/homepage/cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+                <div class="border-1"></div>
+                <a class="c1" href="./pages/homepage/wish.html">
+                    <i class="far fa-heart"></i>
+                </a>
+                <div class="border-1"></div>
+    
+                <a class="c2" href="./pages/homepage/sign-up.html">
+                    <i class="far fa-user-circle"></i>
+                </a>
+    
+            </div>
+    
+        </header>
+        <div class="nav-container">
+            <div class="nav-links">
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+    
+                    <div class="dropdown">
+                        <li>
+                            <a href="./pages/product categories/men.html">Men</a> 
+                        </li>
+    
+                        <div class="dropdown-content">
+                            <a href="#">SHIRT</a>
+                            <a href="#">T-SHIRT</a>
+                            <a href="#">PANT</a>
+    
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li>
+                            <a href="./pages/product categories/women.html">Women</a> 
+                        </li>
+    
+                        <div class="dropdown-content">
+                            <a href="#">Suti</a>
+                            <a href="#">Tops</a>
+                            <a href="#">Saree's</a>
+                            <a href="#">Night Dress</a>
+    
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <li>
+                            <a href="./pages/product categories/kids.html">Kids</a> 
+                        </li>
+    
+                        <div class="dropdown-content">
+                            <a href="#">Dress</a>
+                            <a href="#">Toys</a>
+                            <a href="#">Modern dresses</a>
+                        </div>
+                    </div>
+    
+                    <li>
+                        <a href="./pages/homepage/about.html">About Us</a> 
+                    </li>
+                    <li>
+                        <a href="./pages/homepage/contact.html">Contact</a>
+                    </li>
+                </ul>
+    
+            </div>
+    
+        </div>
+        <div class="pack">
+
+        </div>
+
+        <footer>
+
+        </footer>
+        <script>
+
+    const edit = document.querySelectorAll("button.buy");
+    edit.forEach(function (findId) {
+      findId.addEventListener("click", function () {
+        const { id } = this.dataset;
+        localStorage.setItem("product_unique_Id", JSON.stringify(id));
+        window.location.href = "./editform.html";
+      });
+    });
+    </script>
+
+    </body>
+
+</html>

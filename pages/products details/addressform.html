@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/addressform.css">
+    <link rel="stylesheet" href="../../assets/css/navbar.css">
+    <title>Address form</title>
+</head>
+<body>
+    <form  role="form" id="save" onsubmit="upload(event)" >
+        <div class="form_content">
+            <h2>ADD NEW <span>ADDRESS</span> </h2>
+
+            <div class="content-1">
+                <input class="name" id="name" type="name" required placeholder="NAME" >
+     
+                <input class="name" id="tel" type="tel" pattern="[0-9]{10,12}" maxlength="10" required placeholder="MOBILE NUMBER" >
+             </div>
+            
+         <div class="content-2">
+            <input class="number" id="pin_code" type="text" pattern="[0-9]{6,6}" maxlength="6" required  placeholder="PIN CODE" >
+     
+            <input class="number" id="add" type="text" required  placeholder="ADDRESS" >
+         </div>
+     
+            <input class="local_address" id="local_address" type="name" required  placeholder="CITY" >
+        </div>
+      <button class="submit"   type="submit">SAVE</button>
+
+    </form>
+    <script>
+        function upload(e) {
+		  e.preventDefault();
+
+		  const name = document.getElementById("name").value;
+		  const tel_num = document.getElementById("tel").value;
+		  const pin_code = document.getElementById("pin_code").value;
+		  const address = document.getElementById("add").value;
+		  const local_city = document.getElementById("local_address").value;
+          const unique_id = crypto.randomUUID();
+
+		//   console.log(price);
+		  
+
+
+
+		  const user_address =
+    JSON.parse(localStorage.getItem("user_address")) || [];
+
+    user_address.push({
+    name,
+    tel_num,
+    pin_code,
+    address,
+    local_city,
+    unique_id,
+  });
+
+		  localStorage.setItem("user_address", JSON.stringify(user_address));
+
+//   location.href = "./product_edit_form.html";
+
+		//   document.querySelector("form").reset();
+		}
+    </script>
+    <script src="../../assets/header.js"></script>
+</body>
+</html>

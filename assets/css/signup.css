@@ -1,4 +1,4 @@
-/* ---------------------------signup page------------------------------ */
+/* ---------------------------signup page------------------------------
 .signup-container {
   width: 700px;
   height: 600px;
@@ -52,7 +52,7 @@
   left: 50px;
 }
 
-.otp p {
+/* .otp p {
   height: 40px;
   text-align: center;
 }
@@ -72,7 +72,7 @@
 
 .otp .have-account {
   background-color: orangered;
-}
+} */
 
 .have-account p {
   position: relative;
@@ -83,7 +83,7 @@
 
 
 
-.signup-form input[type=mail] {
+/* .signup-form input[type=mail] {
   display: block;
   position: relative;
   top: 110px;
@@ -98,7 +98,7 @@
   border-top: white;
   border-left: white;
   border-right: white;
-}
+} */
 
 .signup-form input[type=password] {
   display: block;
@@ -134,4 +134,4 @@
 .signup-form {
   position: relative;
   left: 50px;
-}
+} 
